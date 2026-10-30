@@ -340,3 +340,4 @@ h3.card-title{font-family:var(--font-display);font-weight:600;font-size:20px;lin
 .night-glow::before,.night-glow::after{display:none}
 @media (prefers-reduced-motion:reduce){.strip-video video{display:none}}
 .footer-grid a.btn{display:inline-flex;padding:var(--sp-8) var(--sp-16)}
+.team-grid+.quote{margin-top:var(--sp-32)}
