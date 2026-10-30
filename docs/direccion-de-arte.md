@@ -39,3 +39,10 @@ Nada de referentes externos. Evitar: fotos de stock, rostros reales o inventados
 - `landing-page-design` (B4/B5) prohíbe fondos con degradado y pide texto del hero con degradado gris; el encargo exige degradados atmosféricos y texto azul noche → manda el encargo.
 - `taste-skill` (lint) marca vidrio, degradados y bordes finos: es la identidad pedida por el manual. Se respetaron sus reglas de motion, estados, `100svh`, copy realista y ausencia de relleno.
 - Eslogan con palabras apagadas (skill B11): se usó `#5F678C` en lugar de 25 a 35 % de opacidad para mantener contraste AA (5,0:1).
+
+## Ajustes de la segunda ronda (feedback del cliente)
+- **Menos rosa, más serio:** atmósfera perla, lavanda y celeste; se quitó el rosa de fondos, degradados y acentos de interfaz. El coral queda solo como color del eje Talento. Bloques azul noche más profundos.
+- **Íconos:** objetos 3D abstractos de vidrio (tubos, láminas, cápsulas, engranajes), en la línea de las referencias, en lugar de figuras literales. Avatares del equipo en azul noche con aro del color del eje.
+- **Navegación:** barra de ancho completo que se vuelve vidrio al bajar, se oculta al hacer scroll hacia abajo y reaparece al subir; indicador blanco que se desliza entre enlaces; anillo 360° de cinco segmentos que se llena con el progreso de la página y muestra la sección actual (número y nombre); CTA con flecha que gira; en móvil, menú a pantalla completa que se abre en círculo desde el botón, con secciones numeradas, la sección actual resaltada y accesos a WhatsApp y correo.
+- **Hilo conductor:** una línea vertical recorre toda la página, se dibuja con el scroll y lleva un anillo de cinco colores que gira; en cada sección se enciende un nodo y una rama conecta con el antetítulo.
+- **Más movimiento:** cifras que cuentan (4 horas, 5 ejes, 30 a 100 Mipymes, 40 min), franja animada con los mecanismos de contratación, flotación de los objetos 3D, parallax en la imagen de la hoja de ruta, tarjetas que se elevan con una luz que sigue el cursor y líneas de antetítulo que se dibujan. Todo se desactiva con `prefers-reduced-motion`.

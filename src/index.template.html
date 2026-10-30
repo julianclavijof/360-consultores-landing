@@ -45,39 +45,62 @@
 <!--@sprite-->
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<header class="site-header">
-  <div class="nav-pill">
+<header class="site-header" id="site-header">
+  <div class="bar">
     <a class="brand" href="#inicio" aria-label="360° Consultores, ir al inicio">
-      <img src="/assets/img/logo-color-1x.webp" srcset="/assets/img/logo-color-1x.webp 1x, /assets/img/logo-color-2x.webp 2x" width="160" height="76" alt="360° Consultores" fetchpriority="high">
+      <img class="logo-color" src="/assets/img/logo-color-1x.webp" srcset="/assets/img/logo-color-1x.webp 1x, /assets/img/logo-color-2x.webp 2x" width="160" height="76" alt="360° Consultores" fetchpriority="high">
+      <img class="logo-dark" src="/assets/img/logo-dark-1x.webp" srcset="/assets/img/logo-dark-1x.webp 1x, /assets/img/logo-dark-2x.webp 2x" width="160" height="76" alt="" loading="lazy">
     </a>
-    <nav class="nav-links" aria-label="Principal">
-      <a href="#reto">El reto</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#contratacion">Contratación</a>
-      <a href="#hoja-de-ruta">Hoja de ruta</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#preguntas">Preguntas</a>
-      <a href="#contacto">Contacto</a>
+    <nav class="nav-links" id="nav-links" aria-label="Principal">
+      <span class="nav-ind" aria-hidden="true"></span>
+      <a href="#reto" data-label="El reto">El reto</a>
+      <a href="#como-funciona" data-label="Cómo funciona">Cómo funciona</a>
+      <a href="#servicios" data-label="Servicios">Servicios</a>
+      <a href="#contratacion" data-label="Contratación">Contratación</a>
+      <a href="#hoja-de-ruta" data-label="Hoja de ruta">Hoja de ruta</a>
+      <a href="#equipo" data-label="Equipo">Equipo</a>
+      <a href="#preguntas" data-label="Preguntas">Preguntas</a>
+      <a href="#contacto" data-label="Contacto">Contacto</a>
     </nav>
-    <a class="btn btn--primary btn--sm nav-cta" href="#contacto" data-track="cta_principal">Agenda una reunión</a>
-    <span class="nav-spacer"></span>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <a class="nav-progress" href="#inicio" aria-label="Volver al inicio">
+        <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <defs><mask id="ring-gaps"><rect width="40" height="40" fill="#fff"/><g stroke="#000" stroke-width="3"><path d="M20 20 L20 0" transform="rotate(-18 20 20)"/><path d="M20 20 L20 0" transform="rotate(54 20 20)"/><path d="M20 20 L20 0" transform="rotate(126 20 20)"/><path d="M20 20 L20 0" transform="rotate(198 20 20)"/><path d="M20 20 L20 0" transform="rotate(270 20 20)"/></g></mask></defs>
+          <g mask="url(#ring-gaps)" fill="none" stroke-width="5">
+            <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-opacity=".14"/>
+            <circle class="np-fill" cx="20" cy="20" r="15" stroke="url(#gl-rail)" pathLength="100" stroke-dasharray="0 100" transform="rotate(-90 20 20)"/>
+          </g>
+        </svg>
+        <span class="np-text"><span class="np-num" id="np-num">00</span><span class="np-label" id="np-label">Inicio</span></span>
+      </a>
+      <a class="btn btn--primary btn--sm nav-cta" href="#contacto" data-track="cta_principal"><span>Agenda una reunión</span><span class="btn-arr" aria-hidden="true"><svg class="icon"><use href="#i-arrow-up"/></svg></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span class="nt-label">Menú</span><span class="nt-lines" aria-hidden="true"><i></i><i></i></span></button>
+    </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú">
-  <a href="#reto">El reto</a>
-  <a href="#como-funciona">Cómo funciona</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#contratacion">Contratación</a>
-  <a href="#hoja-de-ruta">Hoja de ruta</a>
-  <a href="#equipo">Equipo</a>
-  <a href="#preguntas">Preguntas</a>
-  <a href="#contacto">Contacto</a>
-  <a class="btn btn--primary" href="#contacto" data-track="cta_principal">Agenda una reunión</a>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú de secciones">
+  <div class="menu-inner">
+    <p class="eyebrow">Secciones</p>
+    <ol class="menu-list">
+      <li><a href="#reto" data-label="El reto"><span class="mn-num">01</span><span class="mn-txt">El reto</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#como-funciona" data-label="Cómo funciona"><span class="mn-num">02</span><span class="mn-txt">Cómo funciona</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#servicios" data-label="Servicios"><span class="mn-num">03</span><span class="mn-txt">Servicios</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#contratacion" data-label="Contratación"><span class="mn-num">04</span><span class="mn-txt">Contratación</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#hoja-de-ruta" data-label="Hoja de ruta"><span class="mn-num">05</span><span class="mn-txt">Hoja de ruta</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#equipo" data-label="Equipo"><span class="mn-num">06</span><span class="mn-txt">Equipo</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#preguntas" data-label="Preguntas"><span class="mn-num">07</span><span class="mn-txt">Preguntas</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li><a href="#contacto" data-label="Contacto"><span class="mn-num">08</span><span class="mn-txt">Contacto</span><svg class="icon mn-arr" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    </ol>
+    <div class="menu-foot">
+      <a class="btn btn--light" href="#contacto" data-track="cta_principal">Agenda una reunión <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="menu-contact" href="https://wa.me/573153386887?text=Hola%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20de%20alineaci%C3%B3n%20t%C3%A9cnica%20sobre%20el%20Programa%20de%20Aceleraci%C3%B3n%20Mipyme%20360%C2%B0." target="_blank" rel="noopener" data-track="whatsapp"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+      <a class="menu-contact" href="mailto:oscar@wisecargo.com.co" data-track="email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>oscar@wisecargo.com.co</a>
+    </div>
+  </div>
 </div>
 
 <main id="contenido">
+<div class="thread" id="thread" aria-hidden="true"><div class="thread-track"></div><div class="thread-fill" id="thread-fill"></div><div class="thread-head" id="thread-head"><svg viewBox="-20 -20 640 640"><!--@ringflat--></svg></div></div>
 
 <!-- 1. HERO -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
@@ -86,7 +109,7 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Aliado estratégico en desarrollo económico y competitividad territorial</p>
+        <p class="eyebrow" data-node>Aliado estratégico en desarrollo económico y competitividad territorial</p>
         <h1 class="display" id="hero-title"><span class="w"><span>El</span></span> <span class="w"><span><b>360°</b></span></span> <span class="w"><span>de</span></span> <span class="w"><span>un</span></span> <span class="w"><span>negocio</span></span> <span class="w"><span>en</span></span> <span class="w"><span>una</span></span> <span class="w"><span>sola</span></span> <span class="w"><span><b>tarde</b></span></span></h1>
         <p class="hero-sub">Programa de Aceleración Mipyme 360°: un seminario-taller inmersivo de 4 horas con inteligencia artificial y una ruta de acompañamiento técnico para los empresarios de su territorio.</p>
         <p class="hero-support">Cinco consultores especialistas, una sola jornada y herramientas que los empresarios aplican desde el primer día.</p>
@@ -94,14 +117,17 @@
           <a class="btn btn--primary" href="#contacto" data-track="cta_principal">Agenda una reunión de alineación técnica <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn--glass" id="wa-hero" href="https://wa.me/573153386887?text=Hola%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20de%20alineaci%C3%B3n%20t%C3%A9cnica%20sobre%20el%20Programa%20de%20Aceleraci%C3%B3n%20Mipyme%20360%C2%B0." target="_blank" rel="noopener" data-track="whatsapp"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Escríbenos por WhatsApp</a>
         </div>
-        <ul class="chips" aria-label="Datos clave del programa">
-          <li class="chip"><i></i>4 horas</li>
-          <li class="chip"><i class="c2"></i>5 consultores</li>
-          <li class="chip"><i class="c3"></i>IA aplicada</li>
-          <li class="chip"><i class="c4"></i>Kit Digital 360°</li>
-        </ul>
+
       </div>
     </div>
+  </div>
+  <div class="container hero-stats-wrap">
+    <dl class="stats" aria-label="El programa en cifras">
+      <div class="stat"><dt>Seminario-taller</dt><dd><span class="count" data-to="4">4</span><small>horas</small></dd></div>
+      <div class="stat"><dt>Consultores especialistas</dt><dd><span class="count" data-to="5">5</span><small>ejes</small></dd></div>
+      <div class="stat"><dt>Mipymes por jornada</dt><dd><span class="count" data-from="0" data-to="30">30</span><small>a</small><span class="count" data-to="100">100</span></dd></div>
+      <div class="stat"><dt>Por cada eje</dt><dd><span class="count" data-to="40">40</span><small>min</small></dd></div>
+    </dl>
   </div>
   <div class="hero-media">
     {{pic:hero-ring-poster|960|543|Anillo de vidrio esmerilado iridiscente dividido en cinco segmentos de colores (violeta, azul, coral, lima y ámbar) flotando sobre un fondo perla con rayos de luz suaves||eager}}
@@ -109,12 +135,18 @@
   </div>
 </section>
 
+<!-- Franja: mecanismos de contratación -->
+<div class="marquee" aria-label="Mecanismos de contratación">
+  <p class="marquee-label">Contratable por</p>
+  <div class="marquee-view"><ul class="marquee-track"><li>Contratación directa</li><li>Ley 80 de 1993</li><li>Ley 1150 de 2007</li><li>Convenios de asociación</li><li>Convenios interadministrativos</li><li>Proyectos BPIN</li><li>SECOP II</li></ul><ul class="marquee-track" aria-hidden="true"><li>Contratación directa</li><li>Ley 80 de 1993</li><li>Ley 1150 de 2007</li><li>Convenios de asociación</li><li>Convenios interadministrativos</li><li>Proyectos BPIN</li><li>SECOP II</li></ul></div>
+</div>
+
 <!-- 2. EL RETO -->
 <section class="section section--pearl section--curve" id="reto" aria-labelledby="reto-title">
   <div class="atmo" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">El reto</p>
+      <p class="eyebrow" data-node>El reto</p>
       <h2 class="title rv-words" id="reto-title">Las Mipymes de su territorio necesitan <b>más que teoría</b></h2>
       <p class="lead">Muchas capacitaciones estatales son teóricas y fragmentadas. El empresario sale con ideas, pero sin herramientas para ejecutarlas.</p>
     </div>
@@ -133,8 +165,8 @@
         <p>Una inmersión de 4 horas con 5 consultores en vivo y uso de IA para automatizar ventas, costos, legalidad y logística.</p>
       </article>
       <article class="glass reto-card reto-card--gain reveal">
-        <div class="reto-visual">{{pic:eje-direccion|320|320|Faro y brújula de vidrio violeta con una flecha que asciende||lazy}}</div>
-        <span class="badge eje-3"><i></i>Impacto</span>
+        <div class="reto-visual">{{pic:eje-direccion|320|320|Flecha de vidrio violeta que asciende atravesando un anillo de brújula||lazy}}</div>
+        <span class="badge eje-2"><i></i>Impacto</span>
         <span class="tag">Retorno social</span>
         <h3 class="card-title">Herramientas desde el día 1</h3>
         <p>Cientos de empresarios capacitados, con herramientas aplicadas desde el día 1 y metas BPIN cumplidas.</p>
@@ -159,7 +191,7 @@
 <section class="section section--wash section--curve" id="como-funciona" aria-labelledby="como-title">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Cómo funciona</p>
+      <p class="eyebrow" data-node>Cómo funciona</p>
       <h2 class="title rv-words" id="como-title">Dos fases: <b>impacto masivo</b> y asesoría profunda</h2>
     </div>
     <div class="phases">
@@ -193,7 +225,7 @@
     <div class="tl-sticky">
       <div class="container intro">
         <div class="section-head reveal">
-          <p class="eyebrow">Servicios · Un día, cinco paradas</p>
+          <p class="eyebrow" data-node>Servicios · Un día, cinco paradas</p>
           <h2 class="title rv-words" id="serv-title">Cinco ejes de aceleración, <b>cinco especialistas</b></h2>
           <p class="lead">Cada eje dura 40 minutos y combina conocimiento experto con IA aplicada.</p>
         </div>
@@ -208,7 +240,7 @@
       </div>
       <div class="tl-track" id="tl-track">
         <article class="glass eje-card eje-1" id="eje-direccion" aria-labelledby="e1-t">
-          <div class="eje-art">{{pic:eje-direccion|320|320|Brújula y faro de vidrio violeta con una flecha que asciende||lazy}}</div>
+          <div class="eje-art">{{pic:eje-direccion|320|320|Flecha de vidrio violeta que asciende atravesando un anillo de brújula||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 1</span><span class="badge">Óscar</span></div>
             <h3 id="e1-t">Dirección &amp; Validación</h3>
@@ -217,7 +249,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-2" id="eje-legalidad" aria-labelledby="e2-t">
-          <div class="eje-art">{{pic:eje-legalidad|320|320|Sello oficial de vidrio azul sobre un documento con escudo||lazy}}</div>
+          <div class="eje-art">{{pic:eje-legalidad|320|320|Tres láminas de vidrio apiladas como documentos con un sello azul encima||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 2</span><span class="badge">Dicter</span></div>
             <h3 id="e2-t">Legalidad &amp; Productividad</h3>
@@ -226,7 +258,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-3" id="eje-talento" aria-labelledby="e3-t">
-          <div class="eje-art">{{pic:eje-talento|320|320|Grupo de figuras de vidrio coral, una con casco de seguridad||lazy}}</div>
+          <div class="eje-art">{{pic:eje-talento|320|320|Tres cápsulas de vidrio de distinta altura unidas por un anillo, como un equipo||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 3</span><span class="badge">Ángela</span></div>
             <h3 id="e3-t">Talento &amp; SGSST</h3>
@@ -236,7 +268,7 @@
         </article>
         <article class="glass eje-card eje-4" id="eje-automatizacion" aria-labelledby="e4-t">
           <div class="eje-art eje-art--chat">
-            {{pic:eje-automatizacion|320|320|Burbuja de chat de vidrio lima con engranajes y un rayo|wa-obj|lazy}}
+            {{pic:eje-automatizacion|320|320|Dos engranajes de vidrio atravesados por un rayo verde lima|wa-obj|lazy}}
             <div class="wa" id="wa-sim" role="img" aria-label="Ejemplo ilustrativo de un chatbot de WhatsApp que atiende un pedido">
               <div class="wa-head" aria-hidden="true"><i>IA</i>Asistente del negocio</div>
               <div class="wa-body" aria-hidden="true">
@@ -257,7 +289,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-5" id="eje-logistica" aria-labelledby="e5-t">
-          <div class="eje-art">{{pic:eje-logistica|320|320|Moto de domicilio de vidrio ámbar con caja y una ruta punteada||lazy}}</div>
+          <div class="eje-art">{{pic:eje-logistica|320|320|Tubo de vidrio que traza una ruta con un pin de ubicación y una caja ámbar||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 5</span><span class="badge">Lauro</span></div>
             <h3 id="e5-t">Logística &amp; Última Milla</h3>
@@ -275,7 +307,7 @@
   <div class="atmo" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">El Kit en la mano</p>
+      <p class="eyebrow" data-node>El Kit en la mano</p>
       <h2 class="title rv-words" id="kit-title">Un cierre que deja <b>herramientas en las manos</b> del empresario</h2>
     </div>
     <div class="kit-grid">
@@ -308,7 +340,7 @@
   <div class="night-glow" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Para la Secretaría</p>
+      <p class="eyebrow" data-node>Para la Secretaría</p>
       <h2 class="title rv-words" id="contr-title">Viable desde lo <b>legal y lo presupuestal</b></h2>
       <p class="lead">El programa puede contratarse por los mecanismos de la contratación estatal colombiana (SECOP II y BPIN).</p>
     </div>
@@ -327,10 +359,10 @@
   <div class="atmo" aria-hidden="true"></div>
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">La ruta que continúa</p>
+      <p class="eyebrow" data-node>La ruta que continúa</p>
       <h2 class="title rv-words" id="ruta-title">Cuatro pasos para llevar el programa a su <b>municipio o departamento</b></h2>
     </div>
-    <div class="route-banner reveal">{{pic:ruta-profunda|1136|487|Camino de vidrio que asciende con cuatro hitos luminosos y termina en un puerto estilizado||lazy}}</div>
+    <div class="route-banner reveal" data-parallax="0.06">{{pic:ruta-profunda|1136|487|Camino de vidrio que asciende con cuatro hitos luminosos y termina en un puerto estilizado||lazy}}</div>
     <div class="route">
       <svg class="route-path" viewBox="0 0 1200 220" aria-hidden="true" focusable="false" id="route-path">
         <path class="trail" pathLength="1" d="M0 190C70 190 90 172 150 170C260 166 330 130 450 125C560 120 640 86 750 80C860 74 940 46 1050 40C1110 37 1150 26 1200 18" fill="none" stroke="url(#gl-iri)" stroke-width="6" stroke-linecap="round"/>
@@ -350,7 +382,7 @@
 <section class="section section--wash section--curve" id="equipo" aria-labelledby="equipo-title">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">Equipo</p>
+      <p class="eyebrow" data-node>Equipo</p>
       <h2 class="title rv-words" id="equipo-title">Cinco especialistas, <b>una sola jornada</b></h2>
     </div>
     <ul class="team-grid">
@@ -373,7 +405,7 @@
 <section class="section section--pearl section--curve" id="preguntas" aria-labelledby="faq-title">
   <div class="container">
     <div class="section-head reveal faq-wrap">
-      <p class="eyebrow">Preguntas frecuentes</p>
+      <p class="eyebrow" data-node>Preguntas frecuentes</p>
       <h2 class="title rv-words" id="faq-title">Lo que suelen preguntar las <b>entidades territoriales</b></h2>
     </div>
     <div class="faq-wrap" id="faq">
@@ -389,7 +421,7 @@
     <div class="contact-grid">
       <div class="reveal">
         <svg class="contact-ring" viewBox="-20 -20 640 640" aria-hidden="true" focusable="false"><g id="contact-ring-segs"><!--@ringflat--></g></svg>
-        <p class="eyebrow">Cierre del círculo</p>
+        <p class="eyebrow" data-node>Cierre del círculo</p>
         <h2 class="title rv-words" id="contacto-title" data-no-split>Cierre el círculo en <b>su municipio</b></h2>
         <p class="lead">Agenda una reunión de alineación técnica y le mostramos cómo desplegar el programa en su territorio.</p>
         <div class="contact-data">

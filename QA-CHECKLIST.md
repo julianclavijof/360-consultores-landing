@@ -2,12 +2,12 @@
 
 Leyenda: ✅ **hecho en código** · ⚙️ **pendiente de configurar por usted** (con instrucciones) · 🔍 **pendiente de validación manual**.
 
-## Resultados de las pruebas automáticas (30 de octubre de 2026, servidor local sin compresión)
+## Resultados de las pruebas automáticas (30 de octubre de 2026). Sin compresión el rendimiento móvil baja a 95 (LCP 2,9 s); en producción CloudFront comprime
 | Prueba | Móvil | Escritorio |
 |---|---|---|
-| Lighthouse Rendimiento | **99** | **100** |
+| Lighthouse Rendimiento (servidor con Brotli, como CloudFront) | **100** | **100** |
 | Accesibilidad / Mejores prácticas / SEO | 100 / 100 / 100 | 100 / 100 / 100 |
-| LCP / CLS / TBT (sustituto de INP) | 2,1 s / 0 / 60 ms | 0,5 s / 0,002 / 0 ms |
+| LCP / CLS / TBT (sustituto de INP) | 1,7 s / 0 / 50 ms | 0,4 s / 0,009 / 0 ms |
 
 - `node scripts/qa.mjs`: **todos los chequeos pasan**: 0 enlaces o anclas rotos en las 3 páginas, un solo `h1`, imágenes con `alt`/`width`/`height`, título 57/60 y descripción 141/155 caracteres, `robots` sin `noindex` (solo la 404), JSON-LD válido (Organization + ProfessionalService, WebSite, Service, FAQPage idéntico al acordeón, sin reseñas inventadas), CSP sin `unsafe-inline`, sin credenciales.
 - Pruebas de navegador (Playwright): sin scroll horizontal ni errores de consola en **360, 768, 1280 y 1920 px**; menú móvil, acordeón, validación del formulario, envío con éxito y con error, y consentimiento (sin consentimiento no se carga ningún script de terceros; al rechazar tampoco; al aceptar sí).

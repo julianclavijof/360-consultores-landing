@@ -27,8 +27,18 @@ La API no expone la semilla: la coherencia se logró reutilizando el prefijo y e
 
 **Desvío frente al encargo:** se generó una sola variante por asset (no dos) en los objetos, escenas y fondos, porque la primera salió dentro de estilo; solo hubo doble variante en el hero y en Dirección. Se regeneró una vez la escena del problema.
 
+## Íconos de eje v2 (más sobrios, según referencias del cliente)
+Se reemplazaron los objetos literales (personas, moto, faro) por composiciones abstractas de tubos y formas de vidrio, dominadas por violeta y azul, con el color del eje solo como acento. Prefijo: `Premium abstract 3D icon, frosted translucent glass with soft iridescent refraction, composed of smooth hollow glass tubes and clean geometric forms, mostly periwinkle violet and cool blue glass, minimal and serious corporate aesthetic, soft diffused studio light, plain light pearl grey background, centered with lots of empty space, no text, no letters, no logos, no people, no watermark.`
+| Eje | Generación | Recorte |
+|---|---|---|
+| Dirección: flecha que asciende por un anillo de brújula | `04d834d5-97fd-4f8d-8439-efd5fdff8a3f` | `9cd95327-99fc-4e02-9cc5-6f3df7092f97` |
+| Legalidad: láminas apiladas con sello azul | `46b69512-2d88-43b9-8b9c-bd3019f4fb0f` | `eb50ecf4-a0b4-42e6-bce4-ccb2311b7be2` |
+| Talento: tres cápsulas unidas por un anillo | `48c2d0f2-954b-4d43-80c0-433b7d202b2f` | `6c48cf82-7374-4990-ad48-8ab2df542629` |
+| Automatización: engranajes con rayo lima | `c5dbabee-ba8d-4bd7-a91f-58cf7002f5ea` | `d780615c-39e5-49f4-836a-cea05eff5215` |
+| Logística: tubo de ruta con pin y caja ámbar | `1ceef640-b72a-45d4-888b-f7b63901a5e2` | `95d5e7e0-6d40-4d6d-a1fc-8b73c65f8ecc` |
+
 ## Costo
-Gastados: **54 créditos** (saldo 152,75 → 98,75). Cada imagen cuesta 1 crédito (también cada recorte) y cada video de 5 a 6 s unos 12,5.
+Gastados: **64 créditos** en total (saldo 152,75 → 88,75), de los cuales 10 fueron los íconos v2. Cada imagen cuesta 1 crédito (también cada recorte) y cada video de 5 a 6 s unos 12,5.
 
 ## Post-proceso (reproducible)
 - Imágenes: `python3 scripts/process-assets.py CARPETA_ORIGINALES` genera WebP + AVIF en 1x y 2x, en kebab-case en `assets/img`, con `width`/`height` en el HTML (macro `{{pic:…}}` de `scripts/build.mjs`).

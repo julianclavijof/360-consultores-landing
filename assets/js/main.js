@@ -38,38 +38,76 @@
     }
   })();
 
-  /* ---------- Navegación ---------- */
-  var toggle = $(".nav-toggle");
+  /* ---------- Navegación: barra que se oculta al bajar, indicador deslizante y progreso 360° ---------- */
+  var header = $("#site-header"), toggle = $(".nav-toggle"), menu = $("#menu");
+  var navLinks = $("#nav-links"), ind = $(".nav-ind", navLinks || doc);
+  var npFill = $(".np-fill"), npNum = $("#np-num"), npLabel = $("#np-label"), npText = $(".np-text");
+  var SECS = [{ id: "inicio", label: "Inicio" }].concat($$(".nav-links a").map(function (a) { return { id: a.getAttribute("href").slice(1), label: a.getAttribute("data-label") }; }));
+  SECS.forEach(function (o) { o.el = doc.getElementById(o.id); });
+  var activeId = "inicio";
+  function moveInd(a) {
+    if (!ind) return;
+    if (!a) { ind.classList.remove("on"); return; }
+    ind.style.width = a.offsetWidth + "px";
+    ind.style.transform = "translateX(" + a.offsetLeft + "px)";
+    ind.classList.add("on");
+  }
+  function linkFor(id, scope) { return $(scope + ' a[href="#' + id + '"]'); }
+  function setActive(id) {
+    if (id === activeId) return;
+    activeId = id;
+    $$(".nav-links a, .menu-list a").forEach(function (a) { a.classList.toggle("is-active", a.getAttribute("href") === "#" + id); });
+    $$(".nav-links a").forEach(function (a) { if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current"); });
+    if (!navLinks || !navLinks.matches(":hover")) moveInd(linkFor(id, ".nav-links"));
+    var i = 0; SECS.forEach(function (o, k) { if (o.id === id) i = k; });
+    if (npNum) { npNum.textContent = (i < 10 ? "0" : "") + i; npLabel.textContent = SECS[i].label; npText.classList.remove("swap"); void npText.offsetWidth; npText.classList.add("swap"); }
+  }
+  if (navLinks) {
+    $$(".nav-links a").forEach(function (a) { a.addEventListener("mouseenter", function () { moveInd(a); }); a.addEventListener("focus", function () { moveInd(a); }); });
+    navLinks.addEventListener("mouseleave", function () { moveInd(linkFor(activeId, ".nav-links")); });
+  }
+  var lastY = window.scrollY;
+  function navOnScroll() {
+    var y = window.scrollY, vh = window.innerHeight;
+    var docH = doc.documentElement.scrollHeight - vh;
+    if (npFill) npFill.setAttribute("stroke-dasharray", (clamp(y / Math.max(docH, 1), 0, 1) * 100).toFixed(1) + " 100");
+    header.classList.toggle("is-scrolled", y > 24);
+    if (!doc.body.classList.contains("menu-open")) {
+      if (y > 480 && y > lastY + 6) header.classList.add("is-hidden");
+      else if (y < lastY - 6 || y < 480) header.classList.remove("is-hidden");
+    }
+    lastY = y;
+    var line = y + vh * 0.38, cur = "inicio";
+    SECS.forEach(function (o) { if (o.el && o.el.getBoundingClientRect().top + y <= line) cur = o.id; });
+    setActive(cur);
+  }
   function setMenu(open) {
-    doc.body.classList.toggle("nav-open", open);
+    doc.body.classList.toggle("menu-open", open);
     doc.body.style.overflow = open ? "hidden" : "";
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    if (open) { var first = $("#mobile-menu a"); if (first) first.focus({ preventScroll: true }); }
+    $(".nt-label", toggle).textContent = open ? "Cerrar" : "Menú";
+    header.classList.remove("is-hidden");
+    if (open) setTimeout(function () { var a = $(".menu-list a.is-active") || $(".menu-list a"); if (a) a.focus({ preventScroll: true }); }, 300);
   }
-  if (toggle) {
-    toggle.addEventListener("click", function () { setMenu(!doc.body.classList.contains("nav-open")); });
-    $$("#mobile-menu a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () { setMenu(!doc.body.classList.contains("menu-open")); });
+    $$("#menu a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
     doc.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && doc.body.classList.contains("nav-open")) { setMenu(false); toggle.focus(); }
+      if (!doc.body.classList.contains("menu-open")) return;
+      if (e.key === "Escape") { setMenu(false); toggle.focus(); }
+      if (e.key === "Tab") {
+        var f = [toggle].concat($$("#menu a")), i = f.indexOf(doc.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+        else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+      }
     });
     window.matchMedia("(min-width:1180px)").addEventListener("change", function (m) { if (m.matches) setMenu(false); });
   }
-  var navMap = {};
-  $$(".nav-links a").forEach(function (a) { navMap[a.getAttribute("href").slice(1)] = a; });
-  if ("IntersectionObserver" in window) {
-    var navIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        Object.keys(navMap).forEach(function (k) { navMap[k].removeAttribute("aria-current"); });
-        var a = navMap[en.target.id];
-        if (a) a.setAttribute("aria-current", "true");
-      });
-    }, { rootMargin: "-40% 0px -55% 0px" });
-    Object.keys(navMap).forEach(function (id) { var s = doc.getElementById(id); if (s) navIO.observe(s); });
-    var heroEl = doc.getElementById("inicio");
-    if (heroEl) navIO.observe(heroEl);
-  }
+  activeId = ""; navOnScroll();
+  window.addEventListener("scroll", raf(navOnScroll), { passive: true });
+  window.addEventListener("resize", raf(function () { moveInd(linkFor(activeId, ".nav-links")); }));
+  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(function () { moveInd(linkFor(activeId, ".nav-links")); });
   var topBtn = $("#to-top");
   if (topBtn) topBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
 
@@ -186,6 +224,98 @@
     gio.observe(g.parentNode);
   });
 
+
+  /* ---------- Hilo conductor: une las secciones y se dibuja con el scroll ---------- */
+  var thread = $("#thread"), main = $("#contenido");
+  if (thread && main) {
+    var nodes = [], tFill = $("#thread-fill"), tHead = $("#thread-head"), t0 = 0, t1 = 0, rx = 8;
+    var layout = function () {
+      $$(".thread-node, .thread-branch", thread).forEach(function (n) { n.remove(); });
+      nodes = [];
+      var mTop = main.getBoundingClientRect().top + window.scrollY;
+      var eyebrows = $$("[data-node]", main);
+      if (!eyebrows.length) return;
+      var left0 = eyebrows[0].getBoundingClientRect().left;
+      rx = Math.max(6, left0 - (window.innerWidth >= 1280 ? 36 : 12));
+      eyebrows.forEach(function (e) {
+        var r = e.getBoundingClientRect(), y = r.top + window.scrollY - mTop + r.height / 2;
+        var n = doc.createElement("i"); n.className = "thread-node"; n.style.left = rx + "px"; n.style.top = y + "px";
+        var br = doc.createElement("i"); br.className = "thread-branch"; br.style.left = rx + "px"; br.style.top = y + "px"; br.style.width = Math.max(0, r.left - rx - 2) + "px";
+        thread.appendChild(br); thread.appendChild(n);
+        nodes.push({ y: y, n: n, b: br });
+      });
+      t0 = nodes[0].y;
+      var last = $("#contacto [data-node]");
+      t1 = last ? nodes[nodes.length - 1].y : main.offsetHeight - 200;
+      thread.style.setProperty("--rx", rx + "px");
+      thread.style.setProperty("--ty", t0 + "px");
+      thread.style.setProperty("--th", (t1 - t0) + "px");
+      update();
+    };
+    var update = function () {
+      var mTop = main.getBoundingClientRect().top + window.scrollY;
+      var tip = window.scrollY + window.innerHeight * 0.6 - mTop;
+      var p = reduce ? 1 : clamp((tip - t0) / Math.max(1, t1 - t0), 0, 1);
+      tFill.style.setProperty("--p", p.toFixed(4));
+      thread.style.setProperty("--p", p.toFixed(4));
+      var hy = t0 + p * (t1 - t0);
+      tHead.style.setProperty("--hy", hy.toFixed(1) + "px");
+      tHead.style.setProperty("--rot", (window.scrollY * 0.25).toFixed(1) + "deg");
+      nodes.forEach(function (o) { var on = reduce || o.y <= hy + 1; o.n.classList.toggle("on", on); o.b.classList.toggle("on", on); });
+    };
+    window.addEventListener("scroll", raf(update), { passive: true });
+    window.addEventListener("resize", raf(layout));
+    window.addEventListener("load", layout);
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(layout);
+    if ("ResizeObserver" in window) { var lastH = 0; new ResizeObserver(raf(function () { if (Math.abs(main.offsetHeight - lastH) > 40) { lastH = main.offsetHeight; layout(); } })).observe(main); }
+    layout();
+  }
+
+  /* ---------- Cifras que cuentan al aparecer ---------- */
+  var counters = $$(".count");
+  var runCount = function (el) {
+    var to = +el.getAttribute("data-to"), from = 0, t0c = performance.now(), dur = 1400;
+    var step = function (t) {
+      var k = clamp((t - t0c) / dur, 0, 1), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = Math.round(from + (to - from) * e);
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if (counters.length && !reduce && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (x.isIntersecting) { setTimeout(function () { runCount(x.target); }, 350); cio.unobserve(x.target); } });
+    }, { threshold: 0.6 });
+    counters.forEach(function (c) { c.textContent = "0"; cio.observe(c); });
+  }
+
+  /* ---------- Parallax suave ---------- */
+  var plx = $$("[data-parallax]");
+  if (plx.length && !reduce) {
+    var plxUpd = raf(function () {
+      var vh = window.innerHeight;
+      plx.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;
+        var f = +el.getAttribute("data-parallax"), off = (r.top + r.height / 2 - vh / 2) * -f;
+        var img = el.querySelector("img") || el;
+        img.style.transform = "translate3d(0," + off.toFixed(1) + "px,0) scale(1.06)";
+      });
+    });
+    window.addEventListener("scroll", plxUpd, { passive: true });
+    plxUpd();
+  }
+
+  /* ---------- Luz que sigue al cursor en las tarjetas ---------- */
+  if (window.matchMedia("(hover:hover)").matches && !reduce) {
+    doc.addEventListener("pointermove", function (e) {
+      var c = e.target.closest && e.target.closest(".glass");
+      if (!c) return;
+      var r = c.getBoundingClientRect();
+      c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      c.style.setProperty("--my", (e.clientY - r.top) + "px");
+    }, { passive: true });
+  }
 
   /* ---------- Videos en bucle (solo si no hay ahorro de datos ni movimiento reducido) ---------- */
   (function loops() {
