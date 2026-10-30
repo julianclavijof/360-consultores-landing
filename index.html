@@ -22,14 +22,14 @@
 <meta property="og:title" content="360° Consultores | Mipymes para Alcaldías y Gobernaciones">
 <meta property="og:description" content="Seminario-taller de 4 horas con IA y ruta de asesoría técnica para las Mipymes de su territorio.">
 <meta property="og:url" content="https://www.360consultores.co/">
-<meta property="og:image" content="https://www.360consultores.co/assets/img/og-image.png">
+<meta property="og:image" content="https://www.360consultores.co/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Anillo de cinco segmentos de colores con el titular: El 360° de un negocio en una sola tarde">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="360° Consultores | Mipymes para Alcaldías y Gobernaciones">
 <meta name="twitter:description" content="Seminario-taller de 4 horas con IA y ruta de asesoría técnica para las Mipymes de su territorio.">
-<meta name="twitter:image" content="https://www.360consultores.co/assets/img/og-image.png">
+<meta name="twitter:image" content="https://www.360consultores.co/assets/img/og-image.jpg">
 <meta name="twitter:image:alt" content="Anillo de cinco segmentos de colores con el titular: El 360° de un negocio en una sola tarde">
 <link rel="preload" href="/assets/fonts/sora-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -119,7 +119,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 .atmo::after{width:64vmax;height:64vmax;right:-22vmax;top:-6vmax;background:radial-gradient(closest-side,rgba(45,156,255,.26),rgba(255,111,174,.12) 60%,rgba(255,111,174,0))}
 
 /* Hero */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:var(--sp-96) 0 var(--sp-64);overflow:hidden;isolation:isolate;background:linear-gradient(160deg,#EEEAFE 0%,#E8F1FF 48%,#FBEAF3 100%)}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:var(--sp-32);padding:var(--sp-96) 0 var(--sp-48);overflow:hidden;isolation:isolate;background:linear-gradient(160deg,#EEEAFE 0%,#E8F1FF 48%,#FBEAF3 100%)}
 .hero .container{position:relative;z-index:2}
 .hero-grid{display:grid;gap:var(--sp-32);align-items:center}
 .hero-copy{max-width:680px}
@@ -133,16 +133,8 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 .chips{display:flex;flex-wrap:wrap;gap:var(--sp-8);margin-top:var(--sp-32)}
 .chip{display:inline-flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);border-radius:var(--r-pill);background:var(--glass-bg);border:1px solid var(--glass-border);font-size:14px;line-height:20px;font-weight:700;-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
 .chip i{width:8px;height:8px;border-radius:50%;background:var(--c,var(--violet))}
-.hero-ring{position:relative;display:grid;place-items:center;aspect-ratio:1;width:min(100%,560px);margin-inline:auto}
-.ghost{position:absolute;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--font-display);font-weight:700;font-size:144px;line-height:1;letter-spacing:-.04em;color:rgba(124,92,255,.09);white-space:nowrap;user-select:none;pointer-events:none}
-@media (min-width:768px){.ghost{font-size:288px}}
 @media (min-width:1024px){
-  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
-  .ghost{font-size:360px}
-}
-@media (min-width:1280px){.hero-grid{grid-template-columns:minmax(0,680px) minmax(0,1fr);gap:var(--sp-64)}}
-.hero-ring svg{width:100%;height:auto;overflow:visible}
-.hero-ring .float{width:100%}
+  }
 .seg{transform-box:view-box;transform-origin:300px 300px;transform:translate(calc(var(--ex,0)*var(--dx,0)*1px),calc(var(--ex,0)*var(--dy,0)*1px));transition:transform 120ms linear}
 .float{animation:floaty 9s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(1.5deg)}}
@@ -175,10 +167,26 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 .mobile-menu a:nth-child(9){--i:8}
 .mobile-menu a:nth-child(10){--i:9}
 .icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.chip i.c2{--c:var(--blue)}.chip i.c3{--c:var(--coral)}.chip i.c4{--c:var(--lime)}</style>
+.chip i.c2{--c:var(--blue)}.chip i.c3{--c:var(--coral)}.chip i.c4{--c:var(--lime)}
+
+.ghost{position:absolute;z-index:1;left:var(--gutter);top:50%;transform:translateY(-50%);width:340px;height:auto;color:rgba(124,92,255,.07);pointer-events:none;overflow:visible}
+@media (min-width:768px){.ghost{width:640px}}
+.hero-media{position:relative;z-index:0;width:calc(100% - var(--gutter)*2);max-width:1136px;margin-inline:auto;aspect-ratio:16/9;border-radius:var(--r-32);overflow:hidden;box-shadow:var(--shadow-soft);background:#E6E0F7}
+.hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-media video{opacity:0;transition:opacity 900ms var(--ease)}
+.hero-media video.on{opacity:1}
+@media (min-width:1024px){
+  .hero{display:flex;flex-direction:row;align-items:center;gap:0;padding:var(--sp-96) 0 var(--sp-64)}
+  .hero-media{position:absolute;top:0;bottom:0;right:0;left:auto;z-index:0;width:74%;max-width:none;margin:0;aspect-ratio:auto;border-radius:0;box-shadow:none;background:none;overflow:visible}
+  .hero-media img,.hero-media video{inset:auto;left:0;top:50%;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;transform:translateY(-50%) scale(1.1);transform-origin:70% 50%;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 70% 50%,#000 48%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 70% 50%,#000 48%,transparent 100%)}
+  .hero .container{width:100%}
+  .ghost{left:calc(50% - 600px + var(--gutter) + 360px)}
+}
+@media (min-width:1280px){.ghost{left:calc(50% - 600px + var(--gutter) + 440px)}}
+@media (prefers-reduced-motion:reduce){.hero-media video{display:none}}</style>
 <link rel="stylesheet" href="/assets/css/styles.css" media="print" id="main-css">
 <noscript><link rel="stylesheet" href="/assets/css/styles.css"></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://www.360consultores.co/#organization","name":"360° Consultores","url":"https://www.360consultores.co/","logo":"https://www.360consultores.co/assets/img/logo-color-640.png","image":"https://www.360consultores.co/assets/img/og-image.png","email":"oscar@wisecargo.com.co","telephone":"+57 315 3386887","description":"Aliado estratégico en desarrollo económico y competitividad territorial para alcaldías, gobernaciones y secretarías de desarrollo económico en Colombia.","areaServed":{"@type":"Country","name":"Colombia"},"knowsAbout":["Desarrollo económico local","Competitividad territorial","Fortalecimiento empresarial de Mipymes","Inteligencia artificial para Mipymes","Formalización empresarial","SGSST para Mipymes","Proyectos BPIN","Contratación estatal en Colombia"]},{"@type":"WebSite","@id":"https://www.360consultores.co/#website","url":"https://www.360consultores.co/","name":"360° Consultores","inLanguage":"es-CO","publisher":{"@id":"https://www.360consultores.co/#organization"}},{"@type":"Service","@id":"https://www.360consultores.co/#servicio","name":"Programa de Aceleración Mipyme 360°","serviceType":"Programa de fortalecimiento empresarial para Mipymes","description":"Seminario-taller de 4 horas con cinco consultores e inteligencia artificial, Kit Digital 360° y una ruta de asesoría técnica individual para las Mipymes de un territorio.","provider":{"@id":"https://www.360consultores.co/#organization"},"areaServed":{"@type":"Country","name":"Colombia"},"audience":{"@type":"Audience","audienceType":"Alcaldías, gobernaciones y secretarías de desarrollo económico"},"url":"https://www.360consultores.co/"},{"@type":"FAQPage","@id":"https://www.360consultores.co/#preguntas","inLanguage":"es-CO","mainEntity":[{"@type":"Question","name":"¿Quién financia el seminario-taller?","acceptedAnswer":{"@type":"Answer","text":"La Alcaldía o Gobernación lo financia al 100% como subsidio directo al tejido empresarial; para el empresario la asistencia es gratuita."}},{"@type":"Question","name":"¿Cuántas Mipymes pueden participar?","acceptedAnswer":{"@type":"Answer","text":"Entre 30 y 100 por jornada, con metodología \"Aprender Haciendo\"."}},{"@type":"Question","name":"¿Cuánto dura y qué incluye?","acceptedAnswer":{"@type":"Answer","text":"4 horas: cinco ejes de 40 minutos con 5 consultores, una mentoría colectiva de 40 minutos y la entrega del Kit Digital 360°."}},{"@type":"Question","name":"¿Cómo puede contratarlo una entidad territorial?","acceptedAnswer":{"@type":"Answer","text":"Por contratación directa (Ley 80 de 1993 y Ley 1150 de 2007), convenios de asociación, convenios interadministrativos o imputación a proyectos BPIN."}},{"@type":"Question","name":"¿Qué pasa después del seminario?","acceptedAnswer":{"@type":"Answer","text":"Los emprendedores motivados pueden solicitar asesoría técnica individual a la Unidad de Emprendimiento; la entidad aprueba y contrata bolsas de horas por Mipyme seleccionada."}},{"@type":"Question","name":"¿Qué recibe el empresario al final?","acceptedAnswer":{"@type":"Answer","text":"El Kit Digital 360° por código QR: plantillas financieras en Excel, minutas y modelos legales, prompts de IA y acceso a una comunidad de soporte por WhatsApp o Telegram."}},{"@type":"Question","name":"¿Atienden cualquier municipio o departamento de Colombia?","acceptedAnswer":{"@type":"Answer","text":"Sí, atendemos de forma directa a alcaldías, gobernaciones y secretarías de desarrollo económico en Colombia."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://www.360consultores.co/#organization","name":"360° Consultores","url":"https://www.360consultores.co/","logo":"https://www.360consultores.co/assets/img/logo-color-640.png","image":"https://www.360consultores.co/assets/img/og-image.jpg","email":"oscar@wisecargo.com.co","telephone":"+57 315 3386887","description":"Aliado estratégico en desarrollo económico y competitividad territorial para alcaldías, gobernaciones y secretarías de desarrollo económico en Colombia.","areaServed":{"@type":"Country","name":"Colombia"},"knowsAbout":["Desarrollo económico local","Competitividad territorial","Fortalecimiento empresarial de Mipymes","Inteligencia artificial para Mipymes","Formalización empresarial","SGSST para Mipymes","Proyectos BPIN","Contratación estatal en Colombia"]},{"@type":"WebSite","@id":"https://www.360consultores.co/#website","url":"https://www.360consultores.co/","name":"360° Consultores","inLanguage":"es-CO","publisher":{"@id":"https://www.360consultores.co/#organization"}},{"@type":"Service","@id":"https://www.360consultores.co/#servicio","name":"Programa de Aceleración Mipyme 360°","serviceType":"Programa de fortalecimiento empresarial para Mipymes","description":"Seminario-taller de 4 horas con cinco consultores e inteligencia artificial, Kit Digital 360° y una ruta de asesoría técnica individual para las Mipymes de un territorio.","provider":{"@id":"https://www.360consultores.co/#organization"},"areaServed":{"@type":"Country","name":"Colombia"},"audience":{"@type":"Audience","audienceType":"Alcaldías, gobernaciones y secretarías de desarrollo económico"},"url":"https://www.360consultores.co/"},{"@type":"FAQPage","@id":"https://www.360consultores.co/#preguntas","inLanguage":"es-CO","mainEntity":[{"@type":"Question","name":"¿Quién financia el seminario-taller?","acceptedAnswer":{"@type":"Answer","text":"La Alcaldía o Gobernación lo financia al 100% como subsidio directo al tejido empresarial; para el empresario la asistencia es gratuita."}},{"@type":"Question","name":"¿Cuántas Mipymes pueden participar?","acceptedAnswer":{"@type":"Answer","text":"Entre 30 y 100 por jornada, con metodología \"Aprender Haciendo\"."}},{"@type":"Question","name":"¿Cuánto dura y qué incluye?","acceptedAnswer":{"@type":"Answer","text":"4 horas: cinco ejes de 40 minutos con 5 consultores, una mentoría colectiva de 40 minutos y la entrega del Kit Digital 360°."}},{"@type":"Question","name":"¿Cómo puede contratarlo una entidad territorial?","acceptedAnswer":{"@type":"Answer","text":"Por contratación directa (Ley 80 de 1993 y Ley 1150 de 2007), convenios de asociación, convenios interadministrativos o imputación a proyectos BPIN."}},{"@type":"Question","name":"¿Qué pasa después del seminario?","acceptedAnswer":{"@type":"Answer","text":"Los emprendedores motivados pueden solicitar asesoría técnica individual a la Unidad de Emprendimiento; la entidad aprueba y contrata bolsas de horas por Mipyme seleccionada."}},{"@type":"Question","name":"¿Qué recibe el empresario al final?","acceptedAnswer":{"@type":"Answer","text":"El Kit Digital 360° por código QR: plantillas financieras en Excel, minutas y modelos legales, prompts de IA y acceso a una comunidad de soporte por WhatsApp o Telegram."}},{"@type":"Question","name":"¿Atienden cualquier municipio o departamento de Colombia?","acceptedAnswer":{"@type":"Answer","text":"Sí, atendemos de forma directa a alcaldías, gobernaciones y secretarías de desarrollo económico en Colombia."}}]}]}</script>
 <script src="/assets/js/boot.js" defer></script>
 <script src="/config.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
@@ -219,100 +227,6 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
   </symbol>
 
   <!-- Objetos de vidrio por eje (arte hecho en código) -->
-  <symbol id="obj-direccion" viewBox="0 0 240 240">
-    <g filter="url(#soft)">
-      <circle cx="116" cy="134" r="80" fill="url(#gl-violet)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
-      <circle cx="116" cy="134" r="60" fill="#fff" fill-opacity=".28" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
-      <path d="M116 82l17 52-17-8-17 8z" fill="#fff" fill-opacity=".95"/>
-      <path d="M116 186l-17-52 17 8 17-8z" fill="#7C5CFF" fill-opacity=".6"/>
-      <circle cx="116" cy="134" r="7" fill="#fff" stroke="#7C5CFF" stroke-width="2"/>
-      <path d="M52 108a68 68 0 0 1 40-40" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="5" stroke-linecap="round"/>
-      <path d="M170 70l30-30M182 40h18v18" fill="none" stroke="#7C5CFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-  </symbol>
-  <symbol id="obj-legalidad" viewBox="0 0 240 240">
-    <g filter="url(#soft)">
-      <rect x="44" y="30" width="118" height="152" rx="20" fill="url(#gl-blue)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
-      <rect x="62" y="50" width="56" height="8" rx="4" fill="#fff" fill-opacity=".85"/>
-      <rect x="62" y="68" width="82" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
-      <path d="M103 98l28 10v22c0 18-12 30-28 38-16-8-28-20-28-38v-22z" fill="#fff" fill-opacity=".9" stroke="#2D9CFF" stroke-width="2.5"/>
-      <path d="m91 130 9 9 16-18" fill="none" stroke="#2D9CFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="170" cy="170" r="42" fill="url(#gl-blue)" stroke="#fff" stroke-width="3"/>
-      <circle cx="170" cy="170" r="30" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
-      <path d="M170 152l5.5 11.5 12.5 1.8-9 8.8 2.2 12.4-11.2-6-11.2 6 2.2-12.4-9-8.8 12.5-1.8z" fill="#fff" fill-opacity=".95"/>
-    </g>
-  </symbol>
-  <symbol id="obj-talento" viewBox="0 0 240 240">
-    <g filter="url(#soft)">
-      <circle cx="62" cy="108" r="19" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
-      <path d="M30 180a32 40 0 0 1 64 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
-      <circle cx="178" cy="108" r="19" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
-      <path d="M146 180a32 40 0 0 1 64 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
-      <circle cx="120" cy="92" r="26" fill="url(#gl-white)" stroke="#fff" stroke-width="3"/>
-      <path d="M92 188a28 52 0 0 1 56 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="3" transform="translate(0 -4)"/>
-      <path d="M92 84a28 28 0 0 1 56 0z" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
-      <rect x="84" y="82" width="72" height="9" rx="4.5" fill="#FFB547" fill-opacity=".95" stroke="#fff" stroke-width="2"/>
-      <path d="M120 56v14" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
-    </g>
-  </symbol>
-  <symbol id="obj-automatizacion" viewBox="0 0 240 240">
-    <g filter="url(#soft)">
-      <path d="M72 40h96a38 38 0 0 1 38 38v52a38 38 0 0 1-38 38h-60l-38 30 4-34a38 38 0 0 1-38-34V78a38 38 0 0 1 38-38z" fill="url(#gl-lime)" stroke="#fff" stroke-opacity=".9" stroke-width="3"/>
-      <circle cx="96" cy="104" r="32" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="13" stroke-dasharray="9 9.1"/>
-      <circle cx="96" cy="104" r="23" fill="#fff" fill-opacity=".4" stroke="#fff" stroke-width="5"/>
-      <circle cx="96" cy="104" r="8" fill="#12204A" fill-opacity=".75"/>
-      <path d="M170 66l-24 44h18l-10 36 34-52h-20z" fill="#fff" fill-opacity=".95" stroke="#12204A" stroke-opacity=".5" stroke-width="2" stroke-linejoin="round"/>
-    </g>
-  </symbol>
-  <symbol id="obj-logistica" viewBox="0 0 240 240">
-    <g filter="url(#soft)">
-      <path d="M14 218c52-26 96 8 150-14 22-9 40-8 62-22" fill="none" stroke="#FFB547" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 13"/>
-      <circle cx="224" cy="184" r="9" fill="#FFB547" stroke="#fff" stroke-width="3"/>
-      <rect x="40" y="62" width="64" height="56" rx="12" fill="#fff" fill-opacity=".9" stroke="#FFB547" stroke-width="3"/>
-      <path d="M40 84h64M72 62v22" stroke="#FFB547" stroke-width="3"/>
-      <path d="M58 170l32-52h46l34 52" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M136 118l14-22h22" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="82" y="114" width="52" height="14" rx="7" fill="url(#gl-amber)" stroke="#fff" stroke-width="2"/>
-      <circle cx="58" cy="172" r="28" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
-      <circle cx="58" cy="172" r="12" fill="#fff" fill-opacity=".6"/>
-      <circle cx="170" cy="172" r="28" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
-      <circle cx="170" cy="172" r="12" fill="#fff" fill-opacity=".6"/>
-    </g>
-  </symbol>
-  <symbol id="obj-kit" viewBox="0 0 260 300">
-    <g filter="url(#soft)">
-      <rect x="80" y="14" width="108" height="228" rx="30" fill="url(#gl-white)" stroke="#fff" stroke-width="3"/>
-      <rect x="90" y="28" width="88" height="200" rx="22" fill="url(#gl-screen)"/>
-      <rect x="116" y="20" width="36" height="6" rx="3" fill="#12204A" fill-opacity=".2"/>
-      <rect x="104" y="64" width="60" height="60" rx="10" fill="#fff"/>
-      <path d="M112 72h16v16h-16zM140 72h16v16h-16zM112 100h16v16h-16zM136 96h8v8h-8zM148 108h8v8h-8zM136 112h8v8h-8z" fill="#12204A"/>
-      <rect x="104" y="140" width="60" height="8" rx="4" fill="#fff" fill-opacity=".8"/>
-      <rect x="104" y="156" width="44" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
-      <rect x="104" y="182" width="60" height="28" rx="14" fill="#12204A" fill-opacity=".85"/>
-      <g transform="rotate(-10 40 90)"><rect x="12" y="52" width="72" height="84" rx="14" fill="url(#gl-lime)" stroke="#fff" stroke-width="2.5"/><path d="M26 76h44M26 92h44M26 108h28" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
-      <g transform="rotate(9 214 120)"><rect x="176" y="80" width="68" height="84" rx="14" fill="url(#gl-blue)" stroke="#fff" stroke-width="2.5"/><path d="M190 104h40M190 120h40M190 136h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
-      <g transform="rotate(-6 60 232)"><path d="M18 206h84a14 14 0 0 1 14 14v18a14 14 0 0 1-14 14H46l-20 14 2-14a14 14 0 0 1-10-14v-18a14 14 0 0 1 14-14z" transform="translate(0 -10)" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/></g>
-    </g>
-  </symbol>
-  <symbol id="obj-tienda" viewBox="0 0 320 180">
-    <g>
-      <rect x="40" y="70" width="240" height="100" rx="8" fill="#C9CDE6" fill-opacity=".7"/>
-      <path d="M30 70h260l-18-40H48z" fill="#AEB4D4"/>
-      <path d="M62 30l-8 40M96 30l-4 40M130 30l-1 40M164 30v40M198 30l1 40M232 30l4 40M266 30l8 40" stroke="#C9CDE6" stroke-width="10"/>
-      <rect x="64" y="92" width="76" height="56" rx="8" fill="#9AA1C6" fill-opacity=".5"/>
-      <rect x="170" y="92" width="52" height="78" rx="8" fill="#9AA1C6" fill-opacity=".55"/>
-      <rect x="236" y="102" width="30" height="26" rx="6" fill="#9AA1C6" fill-opacity=".4"/>
-      <circle cx="205" cy="134" r="3" fill="#E3E1F0"/>
-    </g>
-  </symbol>
-  <symbol id="obj-seminario" viewBox="0 0 480 220"><defs><linearGradient id="cone-violet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF" stop-opacity=".75"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/></linearGradient><linearGradient id="cone-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2D9CFF" stop-opacity=".75"/><stop offset="1" stop-color="#2D9CFF" stop-opacity="0"/></linearGradient><linearGradient id="cone-coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6FAE" stop-opacity=".75"/><stop offset="1" stop-color="#FF6FAE" stop-opacity="0"/></linearGradient><linearGradient id="cone-lime" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B6F03C" stop-opacity=".75"/><stop offset="1" stop-color="#B6F03C" stop-opacity="0"/></linearGradient><linearGradient id="cone-amber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB547" stop-opacity=".75"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></linearGradient></defs>
-    <rect width="480" height="220" rx="24" fill="#E9E6FA"/>
-    <rect x="30" y="20" width="420" height="10" rx="5" fill="#C9CDE6"/>
-    <circle cx="90" cy="34" r="9" fill="#7C5CFF"/><circle cx="165" cy="34" r="9" fill="#2D9CFF"/><circle cx="240" cy="34" r="9" fill="#FF6FAE"/><circle cx="315" cy="34" r="9" fill="#B6F03C"/><circle cx="390" cy="34" r="9" fill="#FFB547"/>
-    <path d="M90 40L56 170H124z" fill="url(#cone-violet)"/><path d="M165 40L131 170H199z" fill="url(#cone-blue)"/><path d="M240 40L206 170H274z" fill="url(#cone-coral)"/><path d="M315 40L281 170H349z" fill="url(#cone-lime)"/><path d="M390 40L356 170H424z" fill="url(#cone-amber)"/>
-    <ellipse cx="240" cy="168" rx="200" ry="14" fill="#fff" fill-opacity=".85"/>
-    <circle cx="60" cy="176" r="9" fill="#12204A" fill-opacity=".55"/><path d="M46 210a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="120" cy="182" r="9" fill="#12204A" fill-opacity=".55"/><path d="M106 216a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="190" cy="178" r="9" fill="#12204A" fill-opacity=".55"/><path d="M176 212a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="280" cy="180" r="9" fill="#12204A" fill-opacity=".55"/><path d="M266 214a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="350" cy="176" r="9" fill="#12204A" fill-opacity=".55"/><path d="M336 210a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="420" cy="182" r="9" fill="#12204A" fill-opacity=".55"/><path d="M406 216a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/>
-  </symbol>
 </svg>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
@@ -353,6 +267,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 <!-- 1. HERO -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
   <div class="atmo" aria-hidden="true"></div>
+  <svg class="ghost" viewBox="0 0 640 190" aria-hidden="true" focusable="false"><text x="0" y="165" font-family="Sora, sans-serif" font-weight="700" font-size="200" letter-spacing="-8" fill="currentColor">360°</text></svg>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
@@ -371,21 +286,11 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           <li class="chip"><i class="c4"></i>Kit Digital 360°</li>
         </ul>
       </div>
-      <div class="hero-ring" role="img" aria-label="Anillo de vidrio dividido en cinco segmentos de colores, uno por cada eje de servicio, que se separan al desplazarse por la página">
-        <span class="ghost" aria-hidden="true">360°</span>
-        <div class="float">
-          <svg viewBox="-60 -60 720 720" id="hero-ring" aria-hidden="true" focusable="false">
-            <g filter="url(#soft)">
-            <g class="seg" data-i="0"><path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z" fill="url(#gl-violet)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z" fill="url(#gl-shine)"/></g>
-            <g class="seg" data-i="1"><path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z" fill="url(#gl-blue)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z" fill="url(#gl-shine)"/></g>
-            <g class="seg" data-i="2"><path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z" fill="url(#gl-coral)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z" fill="url(#gl-shine)"/></g>
-            <g class="seg" data-i="3"><path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z" fill="url(#gl-amber)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z" fill="url(#gl-shine)"/></g>
-            <g class="seg" data-i="4"><path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z" fill="url(#gl-lime)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z" fill="url(#gl-shine)"/></g>
-          </g>
-          </svg>
-        </div>
-      </div>
     </div>
+  </div>
+  <div class="hero-media">
+    <picture><source type="image/avif" srcset="/assets/img/hero-ring-poster-1x.avif 1x, /assets/img/hero-ring-poster-2x.avif 2x"><source type="image/webp" srcset="/assets/img/hero-ring-poster-1x.webp 1x, /assets/img/hero-ring-poster-2x.webp 2x"><img src="/assets/img/hero-ring-poster-1x.webp" srcset="/assets/img/hero-ring-poster-1x.webp 1x, /assets/img/hero-ring-poster-2x.webp 2x" width="960" height="543" alt="Anillo de vidrio esmerilado iridiscente dividido en cinco segmentos de colores (violeta, azul, coral, lima y ámbar) flotando sobre un fondo perla con rayos de luz suaves" fetchpriority="high" decoding="async"></picture>
+    <video class="loop" id="hero-video" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1" aria-hidden="true" width="1280" height="720"><source src="/assets/video/hero-ring.webm" type="video/webm"><source src="/assets/video/hero-ring.mp4" type="video/mp4"></video>
   </div>
 </section>
 
@@ -400,7 +305,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
     </div>
     <div class="reto-grid">
       <article class="glass reto-card reto-card--problem reveal">
-        <div class="reto-visual" aria-hidden="true"><svg viewBox="0 0 320 180"><use href="#obj-tienda"/></svg></div>
+        <div class="reto-visual reto-visual--scene"><picture><source type="image/avif" srcset="/assets/img/escena-problema-1x.avif 1x, /assets/img/escena-problema-2x.avif 2x"><source type="image/webp" srcset="/assets/img/escena-problema-1x.webp 1x, /assets/img/escena-problema-2x.webp 2x"><img src="/assets/img/escena-problema-1x.webp" srcset="/assets/img/escena-problema-1x.webp 1x, /assets/img/escena-problema-2x.webp 2x" width="640" height="362" alt="Tienda de barrio estilizada, apagada y con la persiana cerrada, en tonos gris azulados" loading="lazy" decoding="async"></picture></div>
         <span class="tag">El desafío local</span>
         <h3 class="card-title">Una Mipyme que se apaga</h3>
         <p>Alta mortalidad de Mipymes por falta de herramientas modernas, informalidad legal y procesos empíricos sin tecnología.</p>
@@ -413,7 +318,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
         <p>Una inmersión de 4 horas con 5 consultores en vivo y uso de IA para automatizar ventas, costos, legalidad y logística.</p>
       </article>
       <article class="glass reto-card reto-card--gain reveal">
-        <div class="reto-visual" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-direccion"/></svg></div>
+        <div class="reto-visual"><picture><source type="image/avif" srcset="/assets/img/eje-direccion-1x.avif 1x, /assets/img/eje-direccion-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-direccion-1x.webp 1x, /assets/img/eje-direccion-2x.webp 2x"><img src="/assets/img/eje-direccion-1x.webp" srcset="/assets/img/eje-direccion-1x.webp 1x, /assets/img/eje-direccion-2x.webp 2x" width="320" height="320" alt="Faro y brújula de vidrio violeta con una flecha que asciende" loading="lazy" decoding="async"></picture></div>
         <span class="badge eje-3"><i></i>Impacto</span>
         <span class="tag">Retorno social</span>
         <h3 class="card-title">Herramientas desde el día 1</h3>
@@ -429,7 +334,13 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 
 <!-- Eslogan (palabra por palabra al hacer scroll) -->
 <section class="tagline" aria-label="Idea central">
-  <svg class="tagline-ring" viewBox="-20 -20 640 640" aria-hidden="true" focusable="false"><g fill="url(#gl-iri)" opacity=".55"><use href="#ring-paths"/></g></svg>
+  <svg class="tagline-ring" id="tag-ring" viewBox="-60 -60 720 720" aria-hidden="true" focusable="false"><g filter="url(#soft)">
+            <g class="seg" data-i="0"><path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z" fill="url(#gl-violet)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z" fill="url(#gl-shine)"/></g>
+            <g class="seg" data-i="1"><path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z" fill="url(#gl-blue)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z" fill="url(#gl-shine)"/></g>
+            <g class="seg" data-i="2"><path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z" fill="url(#gl-coral)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z" fill="url(#gl-shine)"/></g>
+            <g class="seg" data-i="3"><path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z" fill="url(#gl-amber)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z" fill="url(#gl-shine)"/></g>
+            <g class="seg" data-i="4"><path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z" fill="url(#gl-lime)" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-linejoin="round"/><path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z" fill="url(#gl-shine)"/></g>
+          </g></svg>
   <div class="container">
     <p id="tagline-text" data-words>Desde el nacimiento legal de un negocio hasta la entrega en la puerta del cliente. <b>Un negocio, 360 grados</b>, en una sola tarde.</p>
   </div>
@@ -488,7 +399,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
       </div>
       <div class="tl-track" id="tl-track">
         <article class="glass eje-card eje-1" id="eje-direccion" aria-labelledby="e1-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-direccion"/></svg></div>
+          <div class="eje-art"><picture><source type="image/avif" srcset="/assets/img/eje-direccion-1x.avif 1x, /assets/img/eje-direccion-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-direccion-1x.webp 1x, /assets/img/eje-direccion-2x.webp 2x"><img src="/assets/img/eje-direccion-1x.webp" srcset="/assets/img/eje-direccion-1x.webp 1x, /assets/img/eje-direccion-2x.webp 2x" width="320" height="320" alt="Brújula y faro de vidrio violeta con una flecha que asciende" loading="lazy" decoding="async"></picture></div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 1</span><span class="badge">Óscar</span></div>
             <h3 id="e1-t">Dirección &amp; Validación</h3>
@@ -497,7 +408,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           </div>
         </article>
         <article class="glass eje-card eje-2" id="eje-legalidad" aria-labelledby="e2-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-legalidad"/></svg></div>
+          <div class="eje-art"><picture><source type="image/avif" srcset="/assets/img/eje-legalidad-1x.avif 1x, /assets/img/eje-legalidad-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-legalidad-1x.webp 1x, /assets/img/eje-legalidad-2x.webp 2x"><img src="/assets/img/eje-legalidad-1x.webp" srcset="/assets/img/eje-legalidad-1x.webp 1x, /assets/img/eje-legalidad-2x.webp 2x" width="320" height="320" alt="Sello oficial de vidrio azul sobre un documento con escudo" loading="lazy" decoding="async"></picture></div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 2</span><span class="badge">Dicter</span></div>
             <h3 id="e2-t">Legalidad &amp; Productividad</h3>
@@ -506,7 +417,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           </div>
         </article>
         <article class="glass eje-card eje-3" id="eje-talento" aria-labelledby="e3-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-talento"/></svg></div>
+          <div class="eje-art"><picture><source type="image/avif" srcset="/assets/img/eje-talento-1x.avif 1x, /assets/img/eje-talento-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-talento-1x.webp 1x, /assets/img/eje-talento-2x.webp 2x"><img src="/assets/img/eje-talento-1x.webp" srcset="/assets/img/eje-talento-1x.webp 1x, /assets/img/eje-talento-2x.webp 2x" width="320" height="320" alt="Grupo de figuras de vidrio coral, una con casco de seguridad" loading="lazy" decoding="async"></picture></div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 3</span><span class="badge">Ángela</span></div>
             <h3 id="e3-t">Talento &amp; SGSST</h3>
@@ -515,7 +426,8 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           </div>
         </article>
         <article class="glass eje-card eje-4" id="eje-automatizacion" aria-labelledby="e4-t">
-          <div class="eje-art">
+          <div class="eje-art eje-art--chat">
+            <picture><source type="image/avif" srcset="/assets/img/eje-automatizacion-1x.avif 1x, /assets/img/eje-automatizacion-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-automatizacion-1x.webp 1x, /assets/img/eje-automatizacion-2x.webp 2x"><img src="/assets/img/eje-automatizacion-1x.webp" srcset="/assets/img/eje-automatizacion-1x.webp 1x, /assets/img/eje-automatizacion-2x.webp 2x" width="320" height="320" alt="Burbuja de chat de vidrio lima con engranajes y un rayo" class="wa-obj" loading="lazy" decoding="async"></picture>
             <div class="wa" id="wa-sim" role="img" aria-label="Ejemplo ilustrativo de un chatbot de WhatsApp que atiende un pedido">
               <div class="wa-head" aria-hidden="true"><i>IA</i>Asistente del negocio</div>
               <div class="wa-body" aria-hidden="true">
@@ -536,7 +448,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           </div>
         </article>
         <article class="glass eje-card eje-5" id="eje-logistica" aria-labelledby="e5-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-logistica"/></svg></div>
+          <div class="eje-art"><picture><source type="image/avif" srcset="/assets/img/eje-logistica-1x.avif 1x, /assets/img/eje-logistica-2x.avif 2x"><source type="image/webp" srcset="/assets/img/eje-logistica-1x.webp 1x, /assets/img/eje-logistica-2x.webp 2x"><img src="/assets/img/eje-logistica-1x.webp" srcset="/assets/img/eje-logistica-1x.webp 1x, /assets/img/eje-logistica-2x.webp 2x" width="320" height="320" alt="Moto de domicilio de vidrio ámbar con caja y una ruta punteada" loading="lazy" decoding="async"></picture></div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 5</span><span class="badge">Lauro</span></div>
             <h3 id="e5-t">Logística &amp; Última Milla</h3>
@@ -566,7 +478,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Diagnóstico express en vivo</strong> de casos reales de los asistentes.</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Networking estructurado</strong> entre productores, distribuidores y prestadores de servicios locales.</span></li>
         </ul>
-        <div class="kit-scene" aria-hidden="true"><svg viewBox="0 0 480 220"><use href="#obj-seminario"/></svg></div>
+        <div class="kit-scene"><picture><source type="image/avif" srcset="/assets/img/escena-seminario-1x.avif 1x, /assets/img/escena-seminario-2x.avif 2x"><source type="image/webp" srcset="/assets/img/escena-seminario-1x.webp 1x, /assets/img/escena-seminario-2x.webp 2x"><img src="/assets/img/escena-seminario-1x.webp" srcset="/assets/img/escena-seminario-1x.webp 1x, /assets/img/escena-seminario-2x.webp 2x" width="640" height="362" alt="Auditorio luminoso con siluetas del público y cinco focos de colores sobre la tarima" loading="lazy" decoding="async"></picture></div>
       </article>
       <article class="glass kit-col reveal">
         <h3>Kit Digital 360°</h3>
@@ -576,7 +488,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Minutas y modelos legales:</strong> contratos y solicitudes de marca estandarizados.</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Comunidad de soporte directo</strong> en un grupo privado de WhatsApp o Telegram administrado por los consultores.</span></li>
         </ul>
-        <div class="kit-phone" aria-hidden="true"><svg viewBox="0 0 260 300"><use href="#obj-kit"/></svg></div>
+        <div class="kit-phone"><picture><source type="image/avif" srcset="/assets/img/kit-digital-1x.avif 1x, /assets/img/kit-digital-2x.avif 2x"><source type="image/webp" srcset="/assets/img/kit-digital-1x.webp 1x, /assets/img/kit-digital-2x.webp 2x"><img src="/assets/img/kit-digital-1x.webp" srcset="/assets/img/kit-digital-1x.webp 1x, /assets/img/kit-digital-2x.webp 2x" width="360" height="478" alt="Celular de vidrio con un código QR y plantillas, contrato y chat flotando a su alrededor" loading="lazy" decoding="async"></picture></div>
       </article>
     </div>
   </div>
@@ -609,6 +521,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
       <p class="eyebrow">La ruta que continúa</p>
       <h2 class="title rv-words" id="ruta-title">Cuatro pasos para llevar el programa a su <b>municipio o departamento</b></h2>
     </div>
+    <div class="route-banner reveal"><picture><source type="image/avif" srcset="/assets/img/ruta-profunda-1x.avif 1x, /assets/img/ruta-profunda-2x.avif 2x"><source type="image/webp" srcset="/assets/img/ruta-profunda-1x.webp 1x, /assets/img/ruta-profunda-2x.webp 2x"><img src="/assets/img/ruta-profunda-1x.webp" srcset="/assets/img/ruta-profunda-1x.webp 1x, /assets/img/ruta-profunda-2x.webp 2x" width="1136" height="487" alt="Camino de vidrio que asciende con cuatro hitos luminosos y termina en un puerto estilizado" loading="lazy" decoding="async"></picture></div>
     <div class="route">
       <svg class="route-path" viewBox="0 0 1200 220" aria-hidden="true" focusable="false" id="route-path">
         <path class="trail" pathLength="1" d="M0 190C70 190 90 172 150 170C260 166 330 130 450 125C560 120 640 86 750 80C860 74 940 46 1050 40C1110 37 1150 26 1200 18" fill="none" stroke="url(#gl-iri)" stroke-width="6" stroke-linecap="round"/>
@@ -736,7 +649,10 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 <footer class="site-footer-wrap">
   <div class="cta-strip">
     <div class="container">
-      <svg viewBox="-20 -20 640 640" aria-hidden="true" focusable="false"><g id="strip-ring-segs"><path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z" fill="#7C5CFF"/><path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z" fill="#2D9CFF"/><path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z" fill="#FF6FAE"/><path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z" fill="#FFB547"/><path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z" fill="#B6F03C"/></g></svg>
+      <div class="strip-video">
+        <picture><source type="image/avif" srcset="/assets/img/cierre-ring-poster-1x.avif 1x, /assets/img/cierre-ring-poster-2x.avif 2x"><source type="image/webp" srcset="/assets/img/cierre-ring-poster-1x.webp 1x, /assets/img/cierre-ring-poster-2x.webp 2x"><img src="/assets/img/cierre-ring-poster-1x.webp" srcset="/assets/img/cierre-ring-poster-1x.webp 1x, /assets/img/cierre-ring-poster-2x.webp 2x" width="480" height="270" alt="Anillo completo de vidrio con cinco segmentos de colores brillando" loading="lazy" decoding="async"></picture>
+        <video class="loop" id="cierre-video" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1" aria-hidden="true" width="960" height="540"><source src="/assets/video/cierre-ring.webm" type="video/webm"><source src="/assets/video/cierre-ring.mp4" type="video/mp4"></video>
+      </div>
       <h2>Cierre el círculo <b>en su municipio</b></h2>
       <a class="btn btn--light" href="#contacto" data-track="cta_principal">Agenda una reunión <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>

@@ -147,26 +147,28 @@
     }
   }
 
-  /* ---------- Anillo del hero: se separa en 5 ejes con el scroll ---------- */
+  /* ---------- Anillo del eslogan: se separa en 5 ejes con el scroll ---------- */
   var MIDS = [-126, -54, 18, 90, 162];
-  var heroRing = $("#hero-ring");
-  var segs = heroRing ? $$(".seg", heroRing) : [];
+  var tagRing = $("#tag-ring");
+  var segs = tagRing ? $$(".seg", tagRing) : [];
   segs.forEach(function (s, i) {
     var a = MIDS[i] * Math.PI / 180;
-    s.style.setProperty("--dx", (Math.cos(a) * 70).toFixed(1));
-    s.style.setProperty("--dy", (Math.sin(a) * 70).toFixed(1));
+    s.style.setProperty("--dx", (Math.cos(a) * 90).toFixed(1));
+    s.style.setProperty("--dy", (Math.sin(a) * 90).toFixed(1));
   });
   if (segs.length && !reduce) {
-    var hero = $("#inicio");
-    var upd = raf(function () {
-      var p = clamp(window.scrollY / (hero.offsetHeight * 0.85), 0, 1);
-      heroRing.style.setProperty("--ex", p.toFixed(3));
-      segs.forEach(function (s) { s.style.setProperty("--ex", p.toFixed(3)); });
+    var tagSec = tagRing.closest(".tagline");
+    var updRing = raf(function () {
+      var r = tagSec.getBoundingClientRect(), vh = window.innerHeight;
+      var d = Math.abs(r.top + r.height / 2 - vh / 2) / (vh * 0.85);
+      var e = clamp(d, 0, 1); e = e * e * (3 - 2 * e);
+      segs.forEach(function (s) { s.style.setProperty("--ex", e.toFixed(3)); });
     });
-    window.addEventListener("scroll", upd, { passive: true });
+    window.addEventListener("scroll", updRing, { passive: true });
+    updRing();
   }
-  // Anillos de cierre: se ensamblan al entrar
-  ["#contact-ring-segs", "#strip-ring-segs"].forEach(function (sel) {
+  // Anillo de cierre: se ensambla al entrar
+  ["#contact-ring-segs"].forEach(function (sel) {
     var g = $(sel);
     if (!g || reduce || !("IntersectionObserver" in window)) return;
     $$("path", g).forEach(function (p, i) {
@@ -183,6 +185,26 @@
     }, { threshold: 0.3 });
     gio.observe(g.parentNode);
   });
+
+
+  /* ---------- Videos en bucle (solo si no hay ahorro de datos ni movimiento reducido) ---------- */
+  (function loops() {
+    var conn = navigator.connection || {};
+    if (reduce || conn.saveData || /(^|-)2g$/.test(conn.effectiveType || "")) return;
+    $$("video.loop").forEach(function (v) {
+      v.addEventListener("playing", function () { v.classList.add("on"); });
+      var start = function () {
+        if (!("IntersectionObserver" in window)) { v.play().catch(function () {}); return; }
+        new IntersectionObserver(function (en) {
+          if (en[0].isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+        }, { threshold: 0.15 }).observe(v);
+      };
+      if (v.id === "hero-video") {
+        var go = function () { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(start); };
+        if (doc.readyState === "complete") go(); else window.addEventListener("load", go);
+      } else start();
+    });
+  })();
 
   /* ---------- Servicios: línea de tiempo con scroll pinneado ---------- */
   var sec = $("#servicios"), wrap = $("#tl-wrap"), track = $("#tl-track");

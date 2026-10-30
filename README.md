@@ -7,7 +7,7 @@ Sitio estático de una sola página (HTML + CSS + JS vanilla, sin frameworks) pa
 index.html  politica-privacidad.html  404.html   (generados desde src/)
 config.js   robots.txt  sitemap.xml  llms.txt  site.webmanifest
 favicon.svg favicon-32.png favicon-192.png favicon-512.png apple-touch-icon.png
-assets/     css/critical.css (inline) · css/styles.css · js/boot.js · js/main.js · fonts/ · img/
+assets/     css/critical.css (inline) · css/styles.css · js/ · fonts/ · img/ (AVIF/WebP) · video/ (MP4/WebM)
 src/        plantillas + sprite SVG (anillo, objetos de vidrio, iconos)
 content/    faq.json (única fuente del acordeón y del JSON-LD FAQPage)
 scripts/    build.mjs · build-headers.mjs · set-domain.mjs · qa.mjs
@@ -41,4 +41,4 @@ Después de cambiar IDs o endpoint: `node scripts/build-headers.mjs` y vuelva a 
 ## Decisiones técnicas
 - Sin dependencias: el movimiento es CSS + `IntersectionObserver` + `requestAnimationFrame`; no se usa GSAP.
 - Sin `style=` ni manejadores inline para poder usar una CSP sin `unsafe-inline`.
-- Arte de Higgsfield pendiente: ver `docs/assets-higgsfield.md`. El sitio ya incluye arte en SVG hecho en código.
+- Arte 3D de Higgsfield integrado (ver `docs/assets-higgsfield.md`); el anillo interactivo, el chat de WhatsApp y la línea de tiempo están hechos en código. Para reprocesar imágenes: `python3 scripts/process-assets.py`.

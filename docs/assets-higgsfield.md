@@ -1,29 +1,36 @@
 # Assets con Higgsfield
 
-## Estado: bloqueado por red · 6 de 152,75 créditos gastados
+Todos los assets del encargo están generados, revisados, optimizados e integrados. Modelo de imagen `gpt_image_2` (calidad media; 2k en escenas 16:9, 1k en objetos) y de video `minimax_h3_max` (768p).
 
-La generación funciona, pero **el entorno de la sesión no puede descargar los resultados**: el proxy deniega el host `d8j0ntlcm91z4.cloudfront.net` (CDN de Higgsfield). Sin poder ver ni descargar las imágenes, se frenó el gasto después de la validación inicial y el sitio se construyó con arte hecho en código (anillo SVG de vidrio, objetos de vidrio SVG por eje, teléfono del Kit, escena del seminario, tienda apagada). El sitio es completo y funcional sin los archivos de Higgsfield.
-
-**Para continuar**: agregue `d8j0ntlcm91z4.cloudfront.net` a *Allowed domains* de la red del entorno (menú del entorno → Edit → Network access) y pida «continúa los assets»; se descargan, se procesan y se sustituyen.
-
-## Prefijo de estilo (inglés, sin ajustes porque no hubo referentes)
+## Prefijo de estilo (inglés; sin ajustes porque no hubo `/referencias`)
 `Translucent frosted glass 3D render with iridescent refraction, soft pearl and lavender gradient background, glossy rounded forms, subtle holographic edge reflections in blue, violet and pink, soft diffused light rays, cinematic soft studio lighting, minimal composition with lots of empty space, premium futuristic and clean, no text, no letters, no logos, no watermark.`
 
-## Generado hasta ahora (modelo `gpt_image_2`, calidad media)
-| Asset | Resolución | Variantes (job id) | Estado |
+La API no expone la semilla: la coherencia se logró reutilizando el prefijo y el mismo encuadre «objeto único centrado sobre perla». Los videos usan la imagen elegida como fotograma inicial **y final**, lo que da un bucle perfecto.
+
+## Set final
+| Asset | Tipo | Job elegido | Descartado / notas |
 |---|---|---|---|
-| hero-ring (póster 16:9) | 2k | `fd864d89-597e-492d-b580-18efb2b16bbb`, `3a227f21-8294-40a8-b7bc-b7614180b35b` | generado, sin revisar ni descargar |
-| eje-direccion (1:1) | 1k | `6c6ca3d4-1e32-4d82-87a9-7264e6e803be`, `9487a586-7d2f-4602-a8ba-f26feb9b07ac` | generado, sin revisar ni descargar |
+| hero-ring (póster) | imagen 16:9 2k | `fd864d89-597e-492d-b580-18efb2b16bbb` | variante `3a227f21-…` (más inclinada) |
+| hero-ring (video) | video 6,6 s, loop | `862134fd-6aae-46fa-88f2-8fae926015d5` | inicio = fin = póster. MP4 537 KB + WebM 394 KB (1280×720, sin audio) |
+| eje-direccion | imagen 1:1 + `remove_background` | `6c6ca3d4-…` → recorte `55460d15-cb05-4432-8efd-e5ffb46fdcef` | variante `9487a586-…` |
+| eje-legalidad | imagen 1:1 + recorte | `8538b824-…` → `3ebed4b7-1ca3-44d4-acf6-9d32c0b7c21e` | una sola variante |
+| eje-talento | imagen 1:1 + recorte | `3182842b-…` → `2e08bfdb-657c-4159-a2b9-35755dad9526` | una sola variante |
+| eje-automatizacion | imagen 1:1 + recorte | `9a0e72f8-…` → `f26b7202-9bb9-49b0-91ce-41faf104eb89` | una sola variante |
+| eje-logistica | imagen 1:1 + recorte | `647d5868-…` → `6c2f49f6-d83a-4c04-9ee2-7f2fdf742dbb` | una sola variante |
+| kit-digital | imagen (la API usó 3:4 en vez de 4:5) + recorte | `6dd657f0-…` → `bdac99ec-29ed-4007-8f51-efdcd2f1c0de` | una sola variante |
+| escena-problema | imagen 16:9 | `51545681-2310-4435-b53c-9a70464d5b9e` (maqueta de arcilla gris azulada) | la primera (`df02c792-…`) salió casi fotográfica y se regeneró una vez, como se pidió |
+| escena-seminario | imagen 16:9 | `f900b7f3-91c8-4a48-b0ef-add0fbae5c95` | una sola variante |
+| ruta-profunda | imagen 21:9 | `66413055-8055-4281-b432-5ba7d123ae83` | una sola variante |
+| cierre-ring | video 5,2 s, loop | `612ed747-e3a5-44bc-9471-4401ba060eb5` | inicio = fin = póster del hero. MP4 189 KB + WebM 132 KB (960×540). Póster: su primer fotograma |
+| fondos-degradado ×3 | imágenes 16:9 | `008a88e7-…`, `43a86e92-…`, `f30e4538-…` | claro, perla y noche. Se usan el 1 (secciones claras) y el 3 (bloques azul noche) |
+| og-image | composición | recorte del póster del hero + titular superpuesto por código | `assets/img/og-image.jpg` (1200×630) |
 
-Semilla: no expuesta por la API; para mantener coherencia se reutiliza el prefijo y se usa la mejor variante como imagen de referencia en el resto del set.
+**Desvío frente al encargo:** se generó una sola variante por asset (no dos) en los objetos, escenas y fondos, porque la primera salió dentro de estilo; solo hubo doble variante en el hero y en Dirección. Se regeneró una vez la escena del problema.
 
-## Pendiente (plan y costo estimado)
-| Asset | Tipo | Costo estimado |
-|---|---|---|
-| eje-legalidad, eje-talento, eje-automatizacion, eje-logistica | 4 × 2 variantes, 1:1, luego `remove_background` | ~8 a 16 créditos |
-| kit-digital 4:5, escena-problema, escena-seminario, ruta-profunda 21:9, fondos-degradado ×3, og-image | 2 variantes cada uno | ~16 a 20 créditos |
-| hero-ring video 6 a 8 s (loop: imagen inicial = final) y cierre-ring video 5 s | `minimax_h3_max` 768p, ~12,5 créditos por 5 s | ~40 a 50 créditos |
-| **Total restante** | | **~65 a 85 créditos** (saldo 146,75) |
+## Costo
+Gastados: **54 créditos** (saldo 152,75 → 98,75). Cada imagen cuesta 1 crédito (también cada recorte) y cada video de 5 a 6 s unos 12,5.
 
-## Post-proceso previsto
-Imágenes a WebP + AVIF 1x y 2x con `width`/`height`, nombres en kebab-case en `assets/img`. Videos MP4 (H.264) + WebM sin audio, ≤ 1,5 MB, con `poster`, `muted loop playsinline preload="metadata"`; con ahorro de datos o `prefers-reduced-motion` solo el póster; el LCP seguirá siendo el titular.
+## Post-proceso (reproducible)
+- Imágenes: `python3 scripts/process-assets.py CARPETA_ORIGINALES` genera WebP + AVIF en 1x y 2x, en kebab-case en `assets/img`, con `width`/`height` en el HTML (macro `{{pic:…}}` de `scripts/build.mjs`).
+- Videos: `ffmpeg -i original.mp4 -an -vf "scale=1280:720,fps=24" -c:v libx264 -crf 24 -pix_fmt yuv420p -movflags +faststart hero-ring.mp4` y `-c:v libvpx-vp9 -b:v 0 -crf 32` para WebM. Ambos ≤ 1,5 MB.
+- Uso: `<video muted loop playsinline preload="none">` sobre el póster; solo se reproduce si no hay `prefers-reduced-motion` ni ahorro de datos, y se pausa fuera de pantalla. El LCP medido es el texto del hero, nunca el video.

@@ -22,14 +22,14 @@
 <meta property="og:title" content="360° Consultores | Mipymes para Alcaldías y Gobernaciones">
 <meta property="og:description" content="Seminario-taller de 4 horas con IA y ruta de asesoría técnica para las Mipymes de su territorio.">
 <meta property="og:url" content="https://www.360consultores.co/">
-<meta property="og:image" content="https://www.360consultores.co/assets/img/og-image.png">
+<meta property="og:image" content="https://www.360consultores.co/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Anillo de cinco segmentos de colores con el titular: El 360° de un negocio en una sola tarde">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="360° Consultores | Mipymes para Alcaldías y Gobernaciones">
 <meta name="twitter:description" content="Seminario-taller de 4 horas con IA y ruta de asesoría técnica para las Mipymes de su territorio.">
-<meta name="twitter:image" content="https://www.360consultores.co/assets/img/og-image.png">
+<meta name="twitter:image" content="https://www.360consultores.co/assets/img/og-image.jpg">
 <meta name="twitter:image:alt" content="Anillo de cinco segmentos de colores con el titular: El 360° de un negocio en una sola tarde">
 <link rel="preload" href="/assets/fonts/sora-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -82,6 +82,7 @@
 <!-- 1. HERO -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
   <div class="atmo" aria-hidden="true"></div>
+  <svg class="ghost" viewBox="0 0 640 190" aria-hidden="true" focusable="false"><text x="0" y="165" font-family="Sora, sans-serif" font-weight="700" font-size="200" letter-spacing="-8" fill="currentColor">360°</text></svg>
   <div class="container">
     <div class="hero-grid">
       <div class="hero-copy">
@@ -100,15 +101,11 @@
           <li class="chip"><i class="c4"></i>Kit Digital 360°</li>
         </ul>
       </div>
-      <div class="hero-ring" role="img" aria-label="Anillo de vidrio dividido en cinco segmentos de colores, uno por cada eje de servicio, que se separan al desplazarse por la página">
-        <span class="ghost" aria-hidden="true">360°</span>
-        <div class="float">
-          <svg viewBox="-60 -60 720 720" id="hero-ring" aria-hidden="true" focusable="false">
-            <!--@ring-->
-          </svg>
-        </div>
-      </div>
     </div>
+  </div>
+  <div class="hero-media">
+    {{pic:hero-ring-poster|960|543|Anillo de vidrio esmerilado iridiscente dividido en cinco segmentos de colores (violeta, azul, coral, lima y ámbar) flotando sobre un fondo perla con rayos de luz suaves||eager}}
+    <video class="loop" id="hero-video" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1" aria-hidden="true" width="1280" height="720"><source src="/assets/video/hero-ring.webm" type="video/webm"><source src="/assets/video/hero-ring.mp4" type="video/mp4"></video>
   </div>
 </section>
 
@@ -123,7 +120,7 @@
     </div>
     <div class="reto-grid">
       <article class="glass reto-card reto-card--problem reveal">
-        <div class="reto-visual" aria-hidden="true"><svg viewBox="0 0 320 180"><use href="#obj-tienda"/></svg></div>
+        <div class="reto-visual reto-visual--scene">{{pic:escena-problema|640|362|Tienda de barrio estilizada, apagada y con la persiana cerrada, en tonos gris azulados||lazy}}</div>
         <span class="tag">El desafío local</span>
         <h3 class="card-title">Una Mipyme que se apaga</h3>
         <p>Alta mortalidad de Mipymes por falta de herramientas modernas, informalidad legal y procesos empíricos sin tecnología.</p>
@@ -136,7 +133,7 @@
         <p>Una inmersión de 4 horas con 5 consultores en vivo y uso de IA para automatizar ventas, costos, legalidad y logística.</p>
       </article>
       <article class="glass reto-card reto-card--gain reveal">
-        <div class="reto-visual" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-direccion"/></svg></div>
+        <div class="reto-visual">{{pic:eje-direccion|320|320|Faro y brújula de vidrio violeta con una flecha que asciende||lazy}}</div>
         <span class="badge eje-3"><i></i>Impacto</span>
         <span class="tag">Retorno social</span>
         <h3 class="card-title">Herramientas desde el día 1</h3>
@@ -152,7 +149,7 @@
 
 <!-- Eslogan (palabra por palabra al hacer scroll) -->
 <section class="tagline" aria-label="Idea central">
-  <svg class="tagline-ring" viewBox="-20 -20 640 640" aria-hidden="true" focusable="false"><g fill="url(#gl-iri)" opacity=".55"><use href="#ring-paths"/></g></svg>
+  <svg class="tagline-ring" id="tag-ring" viewBox="-60 -60 720 720" aria-hidden="true" focusable="false"><!--@ring--></svg>
   <div class="container">
     <p id="tagline-text" data-words>Desde el nacimiento legal de un negocio hasta la entrega en la puerta del cliente. <b>Un negocio, 360 grados</b>, en una sola tarde.</p>
   </div>
@@ -211,7 +208,7 @@
       </div>
       <div class="tl-track" id="tl-track">
         <article class="glass eje-card eje-1" id="eje-direccion" aria-labelledby="e1-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-direccion"/></svg></div>
+          <div class="eje-art">{{pic:eje-direccion|320|320|Brújula y faro de vidrio violeta con una flecha que asciende||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 1</span><span class="badge">Óscar</span></div>
             <h3 id="e1-t">Dirección &amp; Validación</h3>
@@ -220,7 +217,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-2" id="eje-legalidad" aria-labelledby="e2-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-legalidad"/></svg></div>
+          <div class="eje-art">{{pic:eje-legalidad|320|320|Sello oficial de vidrio azul sobre un documento con escudo||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 2</span><span class="badge">Dicter</span></div>
             <h3 id="e2-t">Legalidad &amp; Productividad</h3>
@@ -229,7 +226,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-3" id="eje-talento" aria-labelledby="e3-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-talento"/></svg></div>
+          <div class="eje-art">{{pic:eje-talento|320|320|Grupo de figuras de vidrio coral, una con casco de seguridad||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 3</span><span class="badge">Ángela</span></div>
             <h3 id="e3-t">Talento &amp; SGSST</h3>
@@ -238,7 +235,8 @@
           </div>
         </article>
         <article class="glass eje-card eje-4" id="eje-automatizacion" aria-labelledby="e4-t">
-          <div class="eje-art">
+          <div class="eje-art eje-art--chat">
+            {{pic:eje-automatizacion|320|320|Burbuja de chat de vidrio lima con engranajes y un rayo|wa-obj|lazy}}
             <div class="wa" id="wa-sim" role="img" aria-label="Ejemplo ilustrativo de un chatbot de WhatsApp que atiende un pedido">
               <div class="wa-head" aria-hidden="true"><i>IA</i>Asistente del negocio</div>
               <div class="wa-body" aria-hidden="true">
@@ -259,7 +257,7 @@
           </div>
         </article>
         <article class="glass eje-card eje-5" id="eje-logistica" aria-labelledby="e5-t">
-          <div class="eje-art" aria-hidden="true"><svg viewBox="0 0 240 240"><use href="#obj-logistica"/></svg></div>
+          <div class="eje-art">{{pic:eje-logistica|320|320|Moto de domicilio de vidrio ámbar con caja y una ruta punteada||lazy}}</div>
           <div>
             <div class="eje-meta"><span class="badge"><i></i>Eje 5</span><span class="badge">Lauro</span></div>
             <h3 id="e5-t">Logística &amp; Última Milla</h3>
@@ -289,7 +287,7 @@
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Diagnóstico express en vivo</strong> de casos reales de los asistentes.</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Networking estructurado</strong> entre productores, distribuidores y prestadores de servicios locales.</span></li>
         </ul>
-        <div class="kit-scene" aria-hidden="true"><svg viewBox="0 0 480 220"><use href="#obj-seminario"/></svg></div>
+        <div class="kit-scene">{{pic:escena-seminario|640|362|Auditorio luminoso con siluetas del público y cinco focos de colores sobre la tarima||lazy}}</div>
       </article>
       <article class="glass kit-col reveal">
         <h3>Kit Digital 360°</h3>
@@ -299,7 +297,7 @@
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Minutas y modelos legales:</strong> contratos y solicitudes de marca estandarizados.</span></li>
           <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Comunidad de soporte directo</strong> en un grupo privado de WhatsApp o Telegram administrado por los consultores.</span></li>
         </ul>
-        <div class="kit-phone" aria-hidden="true"><svg viewBox="0 0 260 300"><use href="#obj-kit"/></svg></div>
+        <div class="kit-phone">{{pic:kit-digital|360|478|Celular de vidrio con un código QR y plantillas, contrato y chat flotando a su alrededor||lazy}}</div>
       </article>
     </div>
   </div>
@@ -332,6 +330,7 @@
       <p class="eyebrow">La ruta que continúa</p>
       <h2 class="title rv-words" id="ruta-title">Cuatro pasos para llevar el programa a su <b>municipio o departamento</b></h2>
     </div>
+    <div class="route-banner reveal">{{pic:ruta-profunda|1136|487|Camino de vidrio que asciende con cuatro hitos luminosos y termina en un puerto estilizado||lazy}}</div>
     <div class="route">
       <svg class="route-path" viewBox="0 0 1200 220" aria-hidden="true" focusable="false" id="route-path">
         <path class="trail" pathLength="1" d="M0 190C70 190 90 172 150 170C260 166 330 130 450 125C560 120 640 86 750 80C860 74 940 46 1050 40C1110 37 1150 26 1200 18" fill="none" stroke="url(#gl-iri)" stroke-width="6" stroke-linecap="round"/>
@@ -432,7 +431,10 @@
 <footer class="site-footer-wrap">
   <div class="cta-strip">
     <div class="container">
-      <svg viewBox="-20 -20 640 640" aria-hidden="true" focusable="false"><g id="strip-ring-segs"><!--@ringflat--></g></svg>
+      <div class="strip-video">
+        {{pic:cierre-ring-poster|480|270|Anillo completo de vidrio con cinco segmentos de colores brillando||lazy}}
+        <video class="loop" id="cierre-video" muted loop playsinline preload="none" disablepictureinpicture tabindex="-1" aria-hidden="true" width="960" height="540"><source src="/assets/video/cierre-ring.webm" type="video/webm"><source src="/assets/video/cierre-ring.mp4" type="video/mp4"></video>
+      </div>
       <h2>Cierre el círculo <b>en su municipio</b></h2>
       <a class="btn btn--light" href="#contacto" data-track="cta_principal">Agenda una reunión <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>

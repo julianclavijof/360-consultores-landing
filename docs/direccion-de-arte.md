@@ -7,7 +7,7 @@
 
 ## Materiales
 - Vidrio esmerilado translúcido: blanco 45 %, desenfoque 24 px, borde blanco 80 %, radio 32 px (tarjetas, chips, barra de navegación).
-- Objetos de vidrio iridiscente con brillo especular y sombra difusa (anillo, objetos de los ejes, teléfono del Kit).
+- Objetos de vidrio iridiscente con brillo especular y sombra difusa: render 3D de Higgsfield (anillo, un objeto por eje, teléfono del Kit, escenas) más el anillo SVG interactivo.
 - Luz difusa, sin sombras duras; formas redondeadas y recortes curvos entre secciones (radio 48 px).
 
 ## Paleta
@@ -30,7 +30,7 @@ Reglas aplicadas: proporción 60 % perla/blanco, 25 % azul noche, 10 % atmósfer
 Mobile-first, contenedor de 1200 px, tarjetas de 24 a 32 px de radio, botones píldora, mucho aire. Primera mitad gráfica y emocional (hero, reto, eslogan, ejes, Kit); segunda mitad institucional (contratación, hoja de ruta, equipo, cita, FAQ). Un objeto protagonista por sección. Palabra «360°» fantasma muy translúcida detrás del hero.
 
 ## Movimiento
-Curva `cubic-bezier(0.22, 1, 0.36, 1)`, 600 a 900 ms. Titulares con revelado palabra por palabra; eslogan con palabras que pasan de tono apagado a pleno según cruzan una línea; objeto flotante; el anillo del hero **se separa en 5 ejes con el scroll** y los anillos de cierre se **ensamblan** al entrar; línea de tiempo horizontal con scroll pinneado (una parada por eje); chat de WhatsApp animado. Solo se animan `transform` y `opacity` (salvo el acordeón, que usa filas de rejilla). `prefers-reduced-motion`: sin pinneado, sin movimiento, solo cambios de opacidad.
+Curva `cubic-bezier(0.22, 1, 0.36, 1)`, 600 a 900 ms. Titulares con revelado palabra por palabra; eslogan con palabras que pasan de tono apagado a pleno según cruzan una línea; objeto flotante; el anillo de la sección de eslogan **se separa en 5 ejes con el scroll** (el hero usa el video del anillo) y los anillos de cierre se **ensamblan** al entrar; línea de tiempo horizontal con scroll pinneado (una parada por eje); chat de WhatsApp animado. Solo se animan `transform` y `opacity` (salvo el acordeón, que usa filas de rejilla). `prefers-reduced-motion`: sin pinneado, sin movimiento, solo cambios de opacidad.
 
 ## Qué no copiar
 Nada de referentes externos. Evitar: fotos de stock, rostros reales o inventados, composiciones o marcas de terceros, logotipos de clientes, cifras y testimonios inventados.

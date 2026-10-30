@@ -35,7 +35,7 @@ Leyenda: ✅ **hecho en código** · ⚙️ **pendiente de configurar por usted*
 | 17 | Prueba de restauración | 🔍 | Procedimiento en `DEPLOY.md` §8; anote la fecha aquí: ________ |
 | 18 | PageSpeed Insights móvil y desktop | 🔍 | Local: 99 / 100 (arriba). Repita sobre la URL pública con CDN y compresión |
 | 19 | Core Web Vitals (LCP, INP, CLS) | 🔍 | Laboratorio en verde (LCP 2,1 s en móvil con red lenta simulada). Los datos de campo aparecen en Search Console tras ~28 días |
-| 20 | Imágenes, fuentes y scripts optimizados | ✅ | Fuentes WOFF2 autohospedadas con preload y `swap`, CSS crítico inline, JS con `defer`, logo en WebP, arte en SVG. Pendiente: AVIF/WebP/MP4 de Higgsfield (`docs/assets-higgsfield.md`) |
+| 20 | Imágenes, fuentes y scripts optimizados | ✅ | Fuentes WOFF2 autohospedadas con preload y `swap`, CSS crítico inline, JS con `defer`, logo en WebP, arte en SVG. Imágenes AVIF + WebP 1x/2x con `width`/`height`, videos MP4 + WebM ≤ 540 KB con póster, solo póster con movimiento reducido o ahorro de datos (`docs/assets-higgsfield.md`) |
 | 21 | Prueba en móviles reales y distintos tamaños | 🔍 | Probado en emulación (360, 768, 1280, 1920). Falta iPhone y Android reales |
 | 22 | Contraste, foco visible y teclado | ✅ | Lighthouse accesibilidad 100, foco visible, enlace «Saltar al contenido», menú y acordeón con teclado. 🔍 Haga un recorrido con lector de pantalla |
 | 23 | Formularios de punta a punta | ⚙️ | Validación, honeypot y estados probados ✅. Falta conectar `formEndpoint` (`backend-ejemplo/`) |
