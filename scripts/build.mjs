@@ -77,7 +77,7 @@ let html = read("src/index.template.html")
 
 // Macro de imágenes: {{pic:nombre|ancho|alto|alt|clase|eager|lazy}} -> <picture> AVIF + WebP 1x/2x
 const pic = (_, name, w, h, alt, cls, mode) => {
-  const base = `/assets/img/${name}`;
+  const base = `assets/img/${name}`;
   const set = (ext) => `${base}-1x.${ext} 1x, ${base}-2x.${ext} 2x`;
   const attrs = mode === "eager" ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
   return `<picture><source type="image/avif" srcset="${set("avif")}"><source type="image/webp" srcset="${set("webp")}"><img src="${base}-1x.webp" srcset="${set("webp")}" width="${w}" height="${h}" alt="${alt}" ${cls ? `class="${cls}" ` : ""}${attrs}></picture>`;

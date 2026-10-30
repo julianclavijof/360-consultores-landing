@@ -1,5 +1,5 @@
-@font-face{font-family:"Sora";src:url(/assets/fonts/sora-latin-var.woff2) format("woff2");font-weight:100 800;font-style:normal;font-display:swap}
-@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin-var.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Sora";src:url(assets/fonts/sora-latin-var.woff2) format("woff2");font-weight:100 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Manrope";src:url(assets/fonts/manrope-latin-var.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Sora Fallback";src:local("Arial");size-adjust:108%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
 @font-face{font-family:"Manrope Fallback";src:local("Arial");size-adjust:104%;ascent-override:96%;descent-override:26%;line-gap-override:0%}
 :root{

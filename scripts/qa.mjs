@@ -23,7 +23,7 @@ for (const p of pages) {
     if (u === "#") { broken++; console.log(`  enlace vacío "#" en ${p}`); continue; }
     if (u.startsWith("#")) { if (!ids.has(u.slice(1))) { broken++; console.log(`  ancla rota ${u} en ${p}`); } continue; }
     const [file, hash] = u.split("#");
-    const path = file === "/" ? "index.html" : file.replace(/^\//, "");
+    const path = (file === "/" || file === "./" || file === "") ? "index.html" : file.replace(/^\//, "");
     if (!existsSync(join(root, path))) { broken++; console.log(`  archivo faltante ${u} en ${p}`); continue; }
     if (hash && path.endsWith(".html")) { const t = readFileSync(join(root, path), "utf8"); if (!new RegExp(`id="${hash}"`).test(t)) { broken++; console.log(`  ancla rota ${u} en ${p}`); } }
   }

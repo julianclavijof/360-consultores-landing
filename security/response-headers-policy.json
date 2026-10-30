@@ -4,7 +4,7 @@
   "SecurityHeadersConfig": {
     "ContentSecurityPolicy": {
       "Override": true,
-      "ContentSecurityPolicy": "default-src 'self'; script-src 'self'; style-src 'self' 'sha256-UKfrb38P9ek6vfpVGfrS88rBqF5Agu4L0y5zUrTLuIw='; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests"
+      "ContentSecurityPolicy": "default-src 'self'; script-src 'self'; style-src 'self' 'sha256-8+xRz1GJWQL2F22GR1b+PWymXSemeXzxOYyrPm5UVoY='; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests"
     },
     "StrictTransportSecurity": {
       "Override": true,

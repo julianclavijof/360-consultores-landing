@@ -42,3 +42,7 @@ Después de cambiar IDs o endpoint: `node scripts/build-headers.mjs` y vuelva a 
 - Sin dependencias: el movimiento es CSS + `IntersectionObserver` + `requestAnimationFrame`; no se usa GSAP.
 - Sin `style=` ni manejadores inline para poder usar una CSP sin `unsafe-inline`.
 - Arte 3D de Higgsfield integrado (ver `docs/assets-higgsfield.md`); el anillo interactivo, el chat de WhatsApp y la línea de tiempo están hechos en código. Para reprocesar imágenes: `python3 scripts/process-assets.py`.
+
+## Vista previa con GitHub Pages
+Las rutas son relativas y hay un `.nojekyll`, así que el sitio funciona tanto en la raíz de un dominio (CloudFront) como en `https://usuario.github.io/360-consultores-landing/`.
+Settings → Pages → *Deploy from a branch* → rama `claude/vigilant-bohr-v1j0ao`, carpeta `/ (root)`. En repos privados, Pages requiere GitHub Pro; si no, el repo debe ser público.
