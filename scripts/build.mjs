@@ -85,6 +85,15 @@ const pic = (_, name, w, h, alt, cls, mode) => {
 html = html.replace(/\{\{pic:([^|}]+)\|(\d+)\|(\d+)\|([^|}]*)\|([^|}]*)\|(eager|lazy)\}\}/g, pic);
 writeFileSync(join(root, "index.html"), html);
 const critical = read("assets/css/critical.css").trim();
+// Versión B (/v2/): mismas fuentes de contenido, rutas un nivel arriba
+{
+  let v2 = read("src/v2.template.html")
+    .replace("<!--@critical-->", () => read("assets/css/critical.css").trim().replaceAll("url(assets/", "url(../assets/"))
+    .replace("<!--@sprite-->", () => read("src/sprite.html").trim())
+    .replace("<!--@faq-->", () => faqHtml);
+  v2 = v2.replace(/\{\{pic:([^|}]+)\|(\d+)\|(\d+)\|([^|}]*)\|([^|}]*)\|(eager|lazy)\}\}/g, (...m) => pic(...m).replaceAll('"assets/img/', '"../assets/img/').replaceAll(" assets/img/", " ../assets/img/"));
+  writeFileSync(join(root, "v2/index.html"), v2);
+}
 for (const [src, out] of [["src/privacy.template.html", "politica-privacidad.html"], ["src/404.template.html", "404.html"]]) {
   writeFileSync(join(root, out), read(src).replace("<!--@critical-->", () => critical));
 }

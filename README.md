@@ -46,3 +46,10 @@ Después de cambiar IDs o endpoint: `node scripts/build-headers.mjs` y vuelva a 
 ## Vista previa con GitHub Pages
 Las rutas son relativas y hay un `.nojekyll`, así que el sitio funciona tanto en la raíz de un dominio (CloudFront) como en `https://usuario.github.io/360-consultores-landing/`.
 Settings → Pages → *Deploy from a branch* → rama `claude/vigilant-bohr-v1j0ao`, carpeta `/ (root)`. En repos privados, Pages requiere GitHub Pro; si no, el repo debe ser público.
+
+## Dos versiones de diseño
+- **Versión A** (`/`): «Vidrio luminoso». Atmósfera perla, objetos de vidrio, hilo conductor vertical.
+- **Versión B** (`/v2/`): «Conferencia viva». Fondo blanco, violeta, titulares grandes, objetos 3D que flotan y siguen al mouse, agenda pinneada, carruseles, marquesina que acelera con el scroll. Lleva `noindex` para que no compita con la A en buscadores.
+- Las dos comparten `config.js`, formulario, consentimiento, analítica, FAQ y textos. La B se genera con `node scripts/build.mjs` desde `src/v2.template.html`; sus estilos y scripts propios están en `v2/v2.css` y `v2/v2.js`.
+- Botón flotante «Versión A / B» para que el cliente compare: se apaga con `showVersionSwitcher: false` en `config.js`.
+- Cuando el cliente elija: si gana la B, copie `v2/index.html` como `index.html` (ajustando las rutas `../` a `./`) o pídalo y se hace la promoción completa.

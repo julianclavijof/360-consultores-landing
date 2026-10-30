@@ -16,7 +16,7 @@ const hashStyle = (file) => {
   const m = readFileSync(join(root, file), "utf8").match(/<style id="critical">([\s\S]*?)<\/style>/);
   return "'sha256-" + createHash("sha256").update(m[1]).digest("base64") + "'";
 };
-const hashes = [...new Set(["index.html", "politica-privacidad.html", "404.html"].map(hashStyle))];
+const hashes = [...new Set(["index.html", "politica-privacidad.html", "404.html", "v2/index.html"].map(hashStyle))];
 
 const script = ["'self'"], connect = ["'self'"], img = ["'self'", "data:"], frame = [];
 if (C.formEndpoint) connect.push(new URL(C.formEndpoint).origin);

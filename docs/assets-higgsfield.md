@@ -37,6 +37,15 @@ Se reemplazaron los objetos literales (personas, moto, faro) por composiciones a
 | Automatización: engranajes con rayo lima | `c5dbabee-ba8d-4bd7-a91f-58cf7002f5ea` | `d780615c-39e5-49f4-836a-cea05eff5215` |
 | Logística: tubo de ruta con pin y caja ámbar | `1ceef640-b72a-45d4-888b-f7b63901a5e2` | `95d5e7e0-6d40-4d6d-a1fc-8b73c65f8ecc` |
 
+## Versión B
+| Asset | Generación | Recorte |
+|---|---|---|
+| v2-composicion (cilindro violeta, aro de vidrio, esferas) | `4a4a603d-31dd-40ac-b469-0de8f2660bae` | `125f9dcf-7beb-43f1-9113-f9fd66b3c06f` |
+| v2-toro (dona violeta translúcida) | `2c22cc3e-bcf2-4e2d-8458-59be7a06e8d5` | `66c786b7-f7e8-427c-8228-100ab919a15e` |
+| v2-esferas (racimo de esferas de vidrio, cromo y cobalto) | `212dd469-7841-4e4f-b7d9-de80ef11b6e6` | `787f0d1b-0cdc-4a0d-988a-6acd525f0ba5` |
+| v2-cono (cono de vidrio esmerilado) | `88b1af89-5949-4fe4-ac54-e64a8928e1f6` | `f0240190-a05b-4a7f-bc1f-854167f3dbaa` |
+| v2-anillo-noche (anillo sobre azul noche, recorte del panel) | `0347d660-7a29-49b7-b0dc-b4c80cb787b2` | descartada: `715400e5-ab0a-4a3f-bad4-6abb26a44017` |
+
 ## Costo
 Gastados: **64 créditos** en total (saldo 152,75 → 88,75), de los cuales 10 fueron los íconos v2. Cada imagen cuesta 1 crédito (también cada recorte) y cada video de 5 a 6 s unos 12,5.
 

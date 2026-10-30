@@ -8,6 +8,9 @@ window.SITE_CONFIG = {
   // Dominio canónico (https, sin barra final). Cámbielo con: node scripts/set-domain.mjs https://su-dominio
   siteUrl: "https://www.360consultores.co",
 
+  // Muestra el botón flotante para alternar entre la versión A (raíz) y la versión B (/v2/). Póngalo en false para producción.
+  showVersionSwitcher: true,
+
   // Contacto
   email: "oscar@wisecargo.com.co",
   phoneDisplay: "+57 315 3386887",

@@ -4,7 +4,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const pages = ["index.html", "politica-privacidad.html", "404.html"];
+const pages = ["index.html", "politica-privacidad.html", "404.html", "v2/index.html"];
 let fails = 0;
 const ok = (c, msg) => { console.log(`${c ? "OK  " : "FAIL"} ${msg}`); if (!c) fails++; };
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"');
@@ -23,7 +23,8 @@ for (const p of pages) {
     if (u === "#") { broken++; console.log(`  enlace vacío "#" en ${p}`); continue; }
     if (u.startsWith("#")) { if (!ids.has(u.slice(1))) { broken++; console.log(`  ancla rota ${u} en ${p}`); } continue; }
     const [file, hash] = u.split("#");
-    const path = (file === "/" || file === "./" || file === "") ? "index.html" : file.replace(/^\//, "");
+    const base = p.includes("/") ? p.slice(0, p.lastIndexOf("/") + 1) : "";
+    const path = (file === "/" || file === "./" || file === "") ? "index.html" : file === "../" ? "index.html" : join(base, file).replace(/\\/g, "/").replace(/^\//, "");
     if (!existsSync(join(root, path))) { broken++; console.log(`  archivo faltante ${u} en ${p}`); continue; }
     if (hash && path.endsWith(".html")) { const t = readFileSync(join(root, path), "utf8"); if (!new RegExp(`id="${hash}"`).test(t)) { broken++; console.log(`  ancla rota ${u} en ${p}`); } }
   }
@@ -33,7 +34,7 @@ for (const p of pages) {
   const imgs = [...h.matchAll(/<img\b[^>]*>/g)].map((m) => m[0]);
   ok(imgs.every((i) => /\balt="/.test(i) && /\bwidth="/.test(i) && /\bheight="/.test(i)), `${p}: ${imgs.length} imágenes con alt, width y height`);
   const robots = h.match(/<meta name="robots" content="([^"]+)"/)?.[1] || "";
-  ok(p === "404.html" ? robots.includes("noindex") : !robots.includes("noindex"), `${p}: robots="${robots}"`);
+  ok(p === "404.html" || p === "v2/index.html" ? robots.includes("noindex") : !robots.includes("noindex"), `${p}: robots="${robots}"`);
 }
 
 const idx = readFileSync(join(root, "index.html"), "utf8");

@@ -397,3 +397,8 @@ h3.card-title{font-family:var(--font-display);font-weight:600;font-size:20px;lin
 @media (min-width:1180px){.menu{display:none}}
 @media (prefers-reduced-motion:reduce){.menu{clip-path:none;opacity:0;transition:opacity 300ms linear,visibility 0s linear 300ms}.menu-open .menu{opacity:1}.menu-list a{transform:none}}
 @media (max-width:767px){.section{padding:var(--sp-64) 0}.section--curve{padding-top:calc(var(--sp-64) + var(--sp-16))}.section-head{margin-bottom:var(--sp-32)}}
+
+/* Selector de versión */
+.vswitch{position:fixed;right:var(--sp-16);bottom:var(--sp-16);z-index:140;display:inline-flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16) var(--sp-8) var(--sp-8);border-radius:var(--r-pill);background:var(--navy);color:#fff;font-size:14px;line-height:20px;font-weight:700;text-decoration:none;box-shadow:0 16px 32px -12px rgba(18,32,74,.6)}
+.vswitch span{padding:var(--sp-4) var(--sp-12);border-radius:var(--r-pill);background:var(--lime);color:var(--navy)}
+

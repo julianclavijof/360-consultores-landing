@@ -38,6 +38,9 @@
     }
   })();
 
+  var vsw = $("#vswitch");
+  if (vsw && C.showVersionSwitcher) vsw.hidden = false;
+
   /* ---------- Navegación: barra que se oculta al bajar, indicador deslizante y progreso 360° ---------- */
   var header = $("#site-header"), toggle = $(".nav-toggle"), menu = $("#menu");
   var navLinks = $("#nav-links"), ind = $(".nav-ind", navLinks || doc);
@@ -68,6 +71,7 @@
   }
   var lastY = window.scrollY;
   function navOnScroll() {
+    if (!header) return;
     var y = window.scrollY, vh = window.innerHeight;
     var docH = doc.documentElement.scrollHeight - vh;
     if (npFill) npFill.setAttribute("stroke-dasharray", (clamp(y / Math.max(docH, 1), 0, 1) * 100).toFixed(1) + " 100");
@@ -87,10 +91,10 @@
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     $(".nt-label", toggle).textContent = open ? "Cerrar" : "Menú";
-    header.classList.remove("is-hidden");
+    if (header) header.classList.remove("is-hidden");
     if (open) setTimeout(function () { var a = $(".menu-list a.is-active") || $(".menu-list a"); if (a) a.focus({ preventScroll: true }); }, 300);
   }
-  if (toggle && menu) {
+  if (toggle && menu && header) {
     toggle.addEventListener("click", function () { setMenu(!doc.body.classList.contains("menu-open")); });
     $$("#menu a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
     doc.addEventListener("keydown", function (e) {
