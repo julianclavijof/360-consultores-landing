@@ -1,0 +1,130 @@
+<svg class="sr-only" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradientes de vidrio por eje -->
+    <linearGradient id="gl-violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".42" stop-color="#7C5CFF" stop-opacity=".68"/><stop offset="1" stop-color="#7C5CFF" stop-opacity=".92"/></linearGradient>
+    <linearGradient id="gl-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".42" stop-color="#2D9CFF" stop-opacity=".68"/><stop offset="1" stop-color="#2D9CFF" stop-opacity=".92"/></linearGradient>
+    <linearGradient id="gl-coral" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".42" stop-color="#FF6FAE" stop-opacity=".68"/><stop offset="1" stop-color="#FF6FAE" stop-opacity=".92"/></linearGradient>
+    <linearGradient id="gl-lime" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".42" stop-color="#B6F03C" stop-opacity=".7"/><stop offset="1" stop-color="#B6F03C" stop-opacity=".95"/></linearGradient>
+    <linearGradient id="gl-amber" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".42" stop-color="#FFB547" stop-opacity=".7"/><stop offset="1" stop-color="#FFB547" stop-opacity=".95"/></linearGradient>
+    <linearGradient id="gl-white" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity=".45"/></linearGradient>
+    <linearGradient id="gl-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="gl-screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E3DCFC"/><stop offset=".5" stop-color="#CFE6FF"/><stop offset="1" stop-color="#FFD6E8"/></linearGradient>
+    <linearGradient id="gl-iri" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7C5CFF"/><stop offset=".3" stop-color="#2D9CFF"/><stop offset=".55" stop-color="#FF6FAE"/><stop offset=".8" stop-color="#FFB547"/><stop offset="1" stop-color="#B6F03C"/></linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#12204A" flood-opacity=".22"/></filter>
+  </defs>
+
+  <!-- Iconos (estilo línea) -->
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16 9.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 4h3L11 8l-2 1.5a11 11 0 0 0 5.5 5.5L16 13l4 1.5v3A2.5 2.5 0 0 1 17.5 20 14.5 14.5 0 0 1 4 6.5 2.5 2.5 0 0 1 6.5 4z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-2-1-.8.8a3.5 3.5 0 0 1-1.6-1.6l.8-.8-1-2z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9 7H5v6h3a3 3 0 0 1-3 3v2a5 5 0 0 0 4-5zM19 7h-4v6h3a3 3 0 0 1-3 3v2a5 5 0 0 0 4-5z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></symbol>
+
+  <!-- Anillo de cinco segmentos (geometría del manual de marca) -->
+  <symbol id="ring-paths" viewBox="0 0 600 600">
+    <path d="M65.8 212.4A250 250 0 0 1 289.1 50.2L292.8 135.2A165 165 0 0 0 145.4 242.2Z"/>
+    <path d="M310.9 50.2A250 250 0 0 1 534.2 212.4L454.6 242.2A165 165 0 0 0 307.2 135.2Z"/>
+    <path d="M540.9 233.2A250 250 0 0 1 455.6 495.7L402.7 429.1A165 165 0 0 0 459.0 255.9Z"/>
+    <path d="M438.0 508.5A250 250 0 0 1 162.0 508.5L208.9 437.6A165 165 0 0 0 391.1 437.6Z"/>
+    <path d="M144.4 495.7A250 250 0 0 1 59.1 233.2L141.0 255.9A165 165 0 0 0 197.3 429.1Z"/>
+  </symbol>
+
+  <!-- Objetos de vidrio por eje (arte hecho en código) -->
+  <symbol id="obj-direccion" viewBox="0 0 240 240">
+    <g filter="url(#soft)">
+      <circle cx="116" cy="134" r="80" fill="url(#gl-violet)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
+      <circle cx="116" cy="134" r="60" fill="#fff" fill-opacity=".28" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+      <path d="M116 82l17 52-17-8-17 8z" fill="#fff" fill-opacity=".95"/>
+      <path d="M116 186l-17-52 17 8 17-8z" fill="#7C5CFF" fill-opacity=".6"/>
+      <circle cx="116" cy="134" r="7" fill="#fff" stroke="#7C5CFF" stroke-width="2"/>
+      <path d="M52 108a68 68 0 0 1 40-40" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="5" stroke-linecap="round"/>
+      <path d="M170 70l30-30M182 40h18v18" fill="none" stroke="#7C5CFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+  <symbol id="obj-legalidad" viewBox="0 0 240 240">
+    <g filter="url(#soft)">
+      <rect x="44" y="30" width="118" height="152" rx="20" fill="url(#gl-blue)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
+      <rect x="62" y="50" width="56" height="8" rx="4" fill="#fff" fill-opacity=".85"/>
+      <rect x="62" y="68" width="82" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
+      <path d="M103 98l28 10v22c0 18-12 30-28 38-16-8-28-20-28-38v-22z" fill="#fff" fill-opacity=".9" stroke="#2D9CFF" stroke-width="2.5"/>
+      <path d="m91 130 9 9 16-18" fill="none" stroke="#2D9CFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="170" cy="170" r="42" fill="url(#gl-blue)" stroke="#fff" stroke-width="3"/>
+      <circle cx="170" cy="170" r="30" fill="none" stroke="#fff" stroke-opacity=".9" stroke-width="3" stroke-dasharray="3 6" stroke-linecap="round"/>
+      <path d="M170 152l5.5 11.5 12.5 1.8-9 8.8 2.2 12.4-11.2-6-11.2 6 2.2-12.4-9-8.8 12.5-1.8z" fill="#fff" fill-opacity=".95"/>
+    </g>
+  </symbol>
+  <symbol id="obj-talento" viewBox="0 0 240 240">
+    <g filter="url(#soft)">
+      <circle cx="62" cy="108" r="19" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
+      <path d="M30 180a32 40 0 0 1 64 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
+      <circle cx="178" cy="108" r="19" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
+      <path d="M146 180a32 40 0 0 1 64 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/>
+      <circle cx="120" cy="92" r="26" fill="url(#gl-white)" stroke="#fff" stroke-width="3"/>
+      <path d="M92 188a28 52 0 0 1 56 0z" fill="url(#gl-coral)" stroke="#fff" stroke-width="3" transform="translate(0 -4)"/>
+      <path d="M92 84a28 28 0 0 1 56 0z" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
+      <rect x="84" y="82" width="72" height="9" rx="4.5" fill="#FFB547" fill-opacity=".95" stroke="#fff" stroke-width="2"/>
+      <path d="M120 56v14" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+    </g>
+  </symbol>
+  <symbol id="obj-automatizacion" viewBox="0 0 240 240">
+    <g filter="url(#soft)">
+      <path d="M72 40h96a38 38 0 0 1 38 38v52a38 38 0 0 1-38 38h-60l-38 30 4-34a38 38 0 0 1-38-34V78a38 38 0 0 1 38-38z" fill="url(#gl-lime)" stroke="#fff" stroke-opacity=".9" stroke-width="3"/>
+      <circle cx="96" cy="104" r="32" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="13" stroke-dasharray="9 9.1"/>
+      <circle cx="96" cy="104" r="23" fill="#fff" fill-opacity=".4" stroke="#fff" stroke-width="5"/>
+      <circle cx="96" cy="104" r="8" fill="#12204A" fill-opacity=".75"/>
+      <path d="M170 66l-24 44h18l-10 36 34-52h-20z" fill="#fff" fill-opacity=".95" stroke="#12204A" stroke-opacity=".5" stroke-width="2" stroke-linejoin="round"/>
+    </g>
+  </symbol>
+  <symbol id="obj-logistica" viewBox="0 0 240 240">
+    <g filter="url(#soft)">
+      <path d="M14 218c52-26 96 8 150-14 22-9 40-8 62-22" fill="none" stroke="#FFB547" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 13"/>
+      <circle cx="224" cy="184" r="9" fill="#FFB547" stroke="#fff" stroke-width="3"/>
+      <rect x="40" y="62" width="64" height="56" rx="12" fill="#fff" fill-opacity=".9" stroke="#FFB547" stroke-width="3"/>
+      <path d="M40 84h64M72 62v22" stroke="#FFB547" stroke-width="3"/>
+      <path d="M58 170l32-52h46l34 52" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M136 118l14-22h22" fill="none" stroke="#fff" stroke-opacity=".95" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="82" y="114" width="52" height="14" rx="7" fill="url(#gl-amber)" stroke="#fff" stroke-width="2"/>
+      <circle cx="58" cy="172" r="28" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
+      <circle cx="58" cy="172" r="12" fill="#fff" fill-opacity=".6"/>
+      <circle cx="170" cy="172" r="28" fill="url(#gl-amber)" stroke="#fff" stroke-width="3"/>
+      <circle cx="170" cy="172" r="12" fill="#fff" fill-opacity=".6"/>
+    </g>
+  </symbol>
+  <symbol id="obj-kit" viewBox="0 0 260 300">
+    <g filter="url(#soft)">
+      <rect x="80" y="14" width="108" height="228" rx="30" fill="url(#gl-white)" stroke="#fff" stroke-width="3"/>
+      <rect x="90" y="28" width="88" height="200" rx="22" fill="url(#gl-screen)"/>
+      <rect x="116" y="20" width="36" height="6" rx="3" fill="#12204A" fill-opacity=".2"/>
+      <rect x="104" y="64" width="60" height="60" rx="10" fill="#fff"/>
+      <path d="M112 72h16v16h-16zM140 72h16v16h-16zM112 100h16v16h-16zM136 96h8v8h-8zM148 108h8v8h-8zM136 112h8v8h-8z" fill="#12204A"/>
+      <rect x="104" y="140" width="60" height="8" rx="4" fill="#fff" fill-opacity=".8"/>
+      <rect x="104" y="156" width="44" height="8" rx="4" fill="#fff" fill-opacity=".6"/>
+      <rect x="104" y="182" width="60" height="28" rx="14" fill="#12204A" fill-opacity=".85"/>
+      <g transform="rotate(-10 40 90)"><rect x="12" y="52" width="72" height="84" rx="14" fill="url(#gl-lime)" stroke="#fff" stroke-width="2.5"/><path d="M26 76h44M26 92h44M26 108h28" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+      <g transform="rotate(9 214 120)"><rect x="176" y="80" width="68" height="84" rx="14" fill="url(#gl-blue)" stroke="#fff" stroke-width="2.5"/><path d="M190 104h40M190 120h40M190 136h24" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+      <g transform="rotate(-6 60 232)"><path d="M18 206h84a14 14 0 0 1 14 14v18a14 14 0 0 1-14 14H46l-20 14 2-14a14 14 0 0 1-10-14v-18a14 14 0 0 1 14-14z" transform="translate(0 -10)" fill="url(#gl-coral)" stroke="#fff" stroke-width="2.5"/></g>
+    </g>
+  </symbol>
+  <symbol id="obj-tienda" viewBox="0 0 320 180">
+    <g>
+      <rect x="40" y="70" width="240" height="100" rx="8" fill="#C9CDE6" fill-opacity=".7"/>
+      <path d="M30 70h260l-18-40H48z" fill="#AEB4D4"/>
+      <path d="M62 30l-8 40M96 30l-4 40M130 30l-1 40M164 30v40M198 30l1 40M232 30l4 40M266 30l8 40" stroke="#C9CDE6" stroke-width="10"/>
+      <rect x="64" y="92" width="76" height="56" rx="8" fill="#9AA1C6" fill-opacity=".5"/>
+      <rect x="170" y="92" width="52" height="78" rx="8" fill="#9AA1C6" fill-opacity=".55"/>
+      <rect x="236" y="102" width="30" height="26" rx="6" fill="#9AA1C6" fill-opacity=".4"/>
+      <circle cx="205" cy="134" r="3" fill="#E3E1F0"/>
+    </g>
+  </symbol>
+  <symbol id="obj-seminario" viewBox="0 0 480 220"><defs><linearGradient id="cone-violet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF" stop-opacity=".75"/><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/></linearGradient><linearGradient id="cone-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2D9CFF" stop-opacity=".75"/><stop offset="1" stop-color="#2D9CFF" stop-opacity="0"/></linearGradient><linearGradient id="cone-coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6FAE" stop-opacity=".75"/><stop offset="1" stop-color="#FF6FAE" stop-opacity="0"/></linearGradient><linearGradient id="cone-lime" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B6F03C" stop-opacity=".75"/><stop offset="1" stop-color="#B6F03C" stop-opacity="0"/></linearGradient><linearGradient id="cone-amber" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB547" stop-opacity=".75"/><stop offset="1" stop-color="#FFB547" stop-opacity="0"/></linearGradient></defs>
+    <rect width="480" height="220" rx="24" fill="#E9E6FA"/>
+    <rect x="30" y="20" width="420" height="10" rx="5" fill="#C9CDE6"/>
+    <circle cx="90" cy="34" r="9" fill="#7C5CFF"/><circle cx="165" cy="34" r="9" fill="#2D9CFF"/><circle cx="240" cy="34" r="9" fill="#FF6FAE"/><circle cx="315" cy="34" r="9" fill="#B6F03C"/><circle cx="390" cy="34" r="9" fill="#FFB547"/>
+    <path d="M90 40L56 170H124z" fill="url(#cone-violet)"/><path d="M165 40L131 170H199z" fill="url(#cone-blue)"/><path d="M240 40L206 170H274z" fill="url(#cone-coral)"/><path d="M315 40L281 170H349z" fill="url(#cone-lime)"/><path d="M390 40L356 170H424z" fill="url(#cone-amber)"/>
+    <ellipse cx="240" cy="168" rx="200" ry="14" fill="#fff" fill-opacity=".85"/>
+    <circle cx="60" cy="176" r="9" fill="#12204A" fill-opacity=".55"/><path d="M46 210a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="120" cy="182" r="9" fill="#12204A" fill-opacity=".55"/><path d="M106 216a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="190" cy="178" r="9" fill="#12204A" fill-opacity=".55"/><path d="M176 212a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="280" cy="180" r="9" fill="#12204A" fill-opacity=".55"/><path d="M266 214a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="350" cy="176" r="9" fill="#12204A" fill-opacity=".55"/><path d="M336 210a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/><circle cx="420" cy="182" r="9" fill="#12204A" fill-opacity=".55"/><path d="M406 216a14 22 0 0 1 28 0z" fill="#12204A" fill-opacity=".55"/>
+  </symbol>
+</svg>
