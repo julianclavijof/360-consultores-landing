@@ -60,7 +60,10 @@ h3.card-title{font-family:var(--font-display);font-weight:600;font-size:20px;lin
 .tagline .tw{color:#5F678C;transition:color 600ms var(--ease)}
 .tagline .tw.on{color:var(--navy)}
 .tagline .tw.key{font-weight:700}
-.tagline-ring{position:absolute;right:-6%;top:50%;width:min(62vw,620px);height:auto;transform:translateY(-50%);opacity:.92;z-index:0;overflow:visible}
+.tagline-ring{display:block;width:200px;height:auto;margin:0 0 var(--sp-32) var(--gutter);opacity:.95;overflow:visible}
+@media (max-width:767px){.tagline{padding:var(--sp-64) 0 var(--sp-80)}.tagline p{font-size:30px;line-height:36px}}
+@media (min-width:768px){.tagline-ring{width:240px}}
+@media (min-width:1024px){.tagline-ring{position:absolute;right:-6%;top:50%;width:min(40vw,540px);margin:0;transform:translateY(-50%);z-index:0}.tagline p{max-width:min(760px,58vw)}}
 .tagline-ring .seg{transition:transform 150ms linear}
 .no-js .tagline .tw{color:var(--navy)}
 
@@ -335,7 +338,7 @@ h3.card-title{font-family:var(--font-display);font-weight:600;font-size:20px;lin
 .strip-video video{opacity:0;transition:opacity 900ms var(--ease)}
 .strip-video video.on{opacity:1}
 .cta-strip svg{display:none}
-.section--wash{background:linear-gradient(rgba(244,243,250,.35),rgba(244,243,250,.35)),url(../img/fondo-degradado-2.webp) center/cover no-repeat,#F4F3FA}
+.section--wash{background:radial-gradient(70% 50% at 85% 10%,rgba(45,156,255,.10),transparent 70%),radial-gradient(60% 50% at 10% 90%,rgba(124,92,255,.10),transparent 70%),linear-gradient(180deg,#F4F3FA 0%,#EEF0FD 100%)}
 .night-glow{background:url(../img/fondo-degradado-3.webp) center/cover no-repeat;opacity:.9}
 .night-glow::before,.night-glow::after{display:none}
 @media (prefers-reduced-motion:reduce){.strip-video video{display:none}}
@@ -393,3 +396,4 @@ h3.card-title{font-family:var(--font-display);font-weight:600;font-size:20px;lin
 .menu-list li:nth-child(1) a{--i:0}.menu-list li:nth-child(2) a{--i:1}.menu-list li:nth-child(3) a{--i:2}.menu-list li:nth-child(4) a{--i:3}.menu-list li:nth-child(5) a{--i:4}.menu-list li:nth-child(6) a{--i:5}.menu-list li:nth-child(7) a{--i:6}.menu-list li:nth-child(8) a{--i:7}
 @media (min-width:1180px){.menu{display:none}}
 @media (prefers-reduced-motion:reduce){.menu{clip-path:none;opacity:0;transition:opacity 300ms linear,visibility 0s linear 300ms}.menu-open .menu{opacity:1}.menu-list a{transform:none}}
+@media (max-width:767px){.section{padding:var(--sp-64) 0}.section--curve{padding-top:calc(var(--sp-64) + var(--sp-16))}.section-head{margin-bottom:var(--sp-32)}}
