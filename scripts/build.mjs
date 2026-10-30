@@ -25,7 +25,7 @@ const jsonld = {
       "@id": `${SITE}/#organization`,
       name: "360° Consultores",
       url: `${SITE}/`,
-      logo: `${SITE}/assets/img/logo-color-2x.png`,
+      logo: `${SITE}/assets/img/logo-color-640.png`,
       image: `${SITE}/assets/img/og-image.png`,
       email: "oscar@wisecargo.com.co",
       telephone: "+57 315 3386887",
@@ -76,4 +76,8 @@ let html = read("src/index.template.html")
   .replaceAll("<!--@ringflat-->", () => ringflat);
 
 writeFileSync(join(root, "index.html"), html);
+const critical = read("assets/css/critical.css").trim();
+for (const [src, out] of [["src/privacy.template.html", "politica-privacidad.html"], ["src/404.template.html", "404.html"]]) {
+  writeFileSync(join(root, out), read(src).replace("<!--@critical-->", () => critical));
+}
 console.log(`index.html generado (${(html.length / 1024).toFixed(1)} KB)`);

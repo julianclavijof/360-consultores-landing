@@ -50,7 +50,7 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 
 /* Cabecera flotante */
 .site-header{position:fixed;top:var(--sp-12);left:0;right:0;z-index:100;display:flex;justify-content:center;padding-inline:var(--sp-12);pointer-events:none}
-.nav-pill{pointer-events:auto;display:flex;align-items:center;gap:var(--sp-16);padding:var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-16);border-radius:var(--r-pill);background:rgba(255,255,255,.62);border:1px solid var(--glass-border);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 16px 48px -20px rgba(18,32,74,.3);max-width:100%}
+.nav-pill{pointer-events:auto;display:flex;align-items:center;gap:var(--sp-16);padding:var(--sp-8) var(--sp-8) var(--sp-8) var(--sp-16);border-radius:var(--r-pill);background:rgba(255,255,255,.84);border:1px solid var(--glass-border);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:0 16px 48px -20px rgba(18,32,74,.3);max-width:100%}
 .brand{display:flex;align-items:center;flex:none}
 .brand img{height:36px;width:auto}
 .nav-links{display:none;align-items:center;gap:var(--sp-4)}
@@ -77,8 +77,9 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-.02em;text-wrap:balance
 @media (min-width:1180px){.mobile-menu{display:none}}
 
 /* Atmósfera */
+.section{position:relative;isolation:isolate}
 .atmo{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.atmo::before,.atmo::after{content:"";position:absolute;border-radius:50%;filter:blur(40px)}
+.atmo::before,.atmo::after{content:"";position:absolute;border-radius:50%}
 .atmo::before{width:70vmax;height:70vmax;left:-20vmax;top:-30vmax;background:radial-gradient(closest-side,rgba(124,92,255,.28),rgba(124,92,255,0))}
 .atmo::after{width:64vmax;height:64vmax;right:-22vmax;top:-6vmax;background:radial-gradient(closest-side,rgba(45,156,255,.26),rgba(255,111,174,.12) 60%,rgba(255,111,174,0))}
 
